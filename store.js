@@ -2,7 +2,8 @@ import React from 'react';
 import {
     LOGIN_ACTION,
     ASYNCSTORAGE_ACTION,
-    LANGUAGES_ACTION
+    LANGUAGES_ACTION,
+    LOGOUT_ACTION
 } from './Constant/actionType'
 
 export const StoreContext = React.createContext();
@@ -22,6 +23,8 @@ export const storeReducer = (state, action) => {
             return { ...state, ...action.payload }
         case LANGUAGES_ACTION:
             return { ...state, languages: action.payload }
+        case LOGOUT_ACTION:
+            return {...initialState}
         default:
             return state
     }
