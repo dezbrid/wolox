@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 
 
-const BookDetail = () => {
+function BookDetail() {
 
     return (
         <View>

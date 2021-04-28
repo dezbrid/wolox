@@ -5,13 +5,13 @@ import {
 } from 'react-native';
 
 
-const Settings = () => {
+function AddNew() {
 
     return (
         <View>
-            <Text> Settings</Text>
+            <Text> AddNew</Text>
         </View>
     );
 }
 
-export default Settings
+export default AddNew

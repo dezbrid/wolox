@@ -5,13 +5,13 @@ import {
 } from 'react-native';
 
 
-const Wishlist = () => {
+function Library() {
 
     return (
         <View>
-            <Text> Wishlist</Text>
+            <Text> Library</Text>
         </View>
     );
 }
 
-export default Wishlist
+export default Library

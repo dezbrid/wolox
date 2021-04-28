@@ -5,13 +5,13 @@ import {
 } from 'react-native';
 
 
-const AddNew = () => {
+function Rentals() {
 
     return (
         <View>
-            <Text> Add New</Text>
+            <Text> Rentals</Text>
         </View>
     );
 }
 
-export default AddNew
+export default Rentals

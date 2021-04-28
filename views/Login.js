@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 
 
-const Login = () => {
+function Login() {
 
     return (
         <View>
