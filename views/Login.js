@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext,useEffect } from 'react';
 import {
     SafeAreaView,
     View,
@@ -13,10 +13,15 @@ import { LOGIN_ACTION } from '../Constant/actionType'
 function Login() {
     const navigation = useNavigation();
     const storeContext = useContext(StoreContext);
+    const session_active=storeContext.state.session_active
+    useEffect(() => {
+        if (session_active){
+            navigation.navigate("Main")
+        }
+    }, [session_active])
     function onLogin() {
-
         storeContext.dispatch({ type: LOGIN_ACTION, payload: true })
-        navigation.navigate("Main")
+       
     }
     return (
         <SafeAreaView style={{ flex: 1 }}>
