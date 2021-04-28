@@ -12,10 +12,11 @@ import { LOGIN_ACTION } from '../Constant/actionType'
 
 function Login() {
     const navigation = useNavigation();
-    const storeContext = useContext(StoreContext)
+    const storeContext = useContext(StoreContext);
     function onLogin() {
-        navigation.navigate("Main")
+
         storeContext.dispatch({ type: LOGIN_ACTION, payload: true })
+        navigation.navigate("Main")
     }
     return (
         <SafeAreaView style={{ flex: 1 }}>

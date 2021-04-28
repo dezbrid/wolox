@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -13,6 +13,7 @@ import {
 import {
     Image
 } from 'react-native';
+import { StoreContext } from './store';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -161,18 +162,28 @@ function TabNavigator() {
 }
 
 function StackNavigator() {
-
+    const storeContext = useContext(StoreContext);
+    const session_active = storeContext.state.session_active;
     return (
         <Stack.Navigator
-            initialRouteName="Login"
+            initialRouteName={"Login"}
             headerMode="screen"
             screenOptions={{
 
             }}
         >
-            <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-            <Stack.Screen name="BookDetail" component={BookDetail} options={{ headerShown: true, title: 'BOOK DETAIL' }} />
-            <Stack.Screen name="Main" component={TabNavigator} options={{ headerShown: false }} />
+            {
+                session_active ?
+                    <>
+                        <Stack.Screen name="Main" component={TabNavigator} options={{ headerShown: false }} />
+                        <Stack.Screen name="BookDetail" component={BookDetail} options={{ headerShown: true, title: 'BOOK DETAIL' }} />
+                    </> :
+                    <>
+                        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+                    </>
+
+            }
+
         </Stack.Navigator>
     )
 

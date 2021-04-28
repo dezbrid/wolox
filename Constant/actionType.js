@@ -1,1 +1,1 @@
-export  const LOGIN_ACTION ='LOGIN'
+export  const LOGIN_ACTION ='LOGIN';

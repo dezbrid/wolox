@@ -8,13 +8,13 @@ export const StoreContext = React.createContext();
 export const initialState = {
     sign_in: [],
     books: [],
-    active: false
+    session_active: false
 }
 
 export const storeReducer = (state, action) => {
     switch (action.type) {
         case LOGIN_ACTION:
-            return { ...state, active:  action.payload }
+            return { ...state, session_active:  action.payload }
         default:
             return state
     }

@@ -12,10 +12,10 @@ function App() {
   useEffect(() => {
     async function setStateAsyncStorage() {
       if (state) {
-        await AsyncStorage.setItem('state', JSON.stringify(state))
+        await AsyncStorage.setItem('state', JSON.stringify(state));
       }
     }
-    setStateAsyncStorage()
+    setStateAsyncStorage();
   }, [state]);
 
   return (
