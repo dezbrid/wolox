@@ -7,15 +7,15 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
+import { LOGIN_ACTION } from '../Constant/actionType'
 
 
 function Login() {
     const navigation = useNavigation();
     const storeContext = useContext(StoreContext)
-    console.log('storeContext', storeContext.state)
     function onLogin() {
         navigation.navigate("Main")
-        storeContext.dispatch({type:'LOGIN',payload:'hola'})
+        storeContext.dispatch({ type: LOGIN_ACTION, payload: true })
     }
     return (
         <SafeAreaView style={{ flex: 1 }}>

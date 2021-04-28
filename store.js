@@ -1,16 +1,20 @@
 import React from 'react';
+import {
+    LOGIN_ACTION,
+} from './Constant/actionType'
 
 export const StoreContext = React.createContext();
 
 export const initialState = {
     sign_in: [],
-    books: []
+    books: [],
+    active: false
 }
 
 export const storeReducer = (state, action) => {
     switch (action.type) {
-        case 'LOGIN':
-            return { ...state, sign_in: [...state.sign_in, action.payload] }
+        case LOGIN_ACTION:
+            return { ...state, active:  action.payload }
         default:
             return state
     }

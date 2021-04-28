@@ -16,8 +16,8 @@ function App() {
       }
     }
     setStateAsyncStorage()
-
   }, [state]);
+
   return (
     <StoreContext.Provider value={{ state, dispatch }}>
       <NavigationContainer>
