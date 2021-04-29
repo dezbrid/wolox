@@ -94,7 +94,7 @@ function Login() {
             }
             errorText = errorText || signIn[key].error
         }
-        return emptyText || errorText
+        return emptyText || errorText || !term
     }
 
     return (
@@ -132,9 +132,12 @@ function Login() {
                                 value={term}
                                 onValueChange={(newValue) => setTerm(newValue)}
                                 boxType='square'
-                                style={{transform:[{scaleX:0.8},{scaleY:0.8}],width:20,height:20}}
+                                onCheckColor={colors.blue}
+                                onTintColor={colors.blue}
+                                tintColors={{ true: colors.blue, false: colors.gray }}
+                                style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }], width: 20, height: 20 }}
                             />
-                            <Text style={{ alignSelf: 'center' }}>
+                            <Text style={{ alignSelf: 'center', marginLeft: 10 }}>
                                 {lang.t("login.term", { locale: languages })}
                             </Text>
                         </View>
