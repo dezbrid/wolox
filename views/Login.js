@@ -3,7 +3,8 @@ import {
     SafeAreaView,
     View,
     Image,
-    StatusBar
+    StatusBar,
+    KeyboardAvoidingView
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
@@ -46,7 +47,7 @@ function Login() {
             navigation.navigate("Main")
         }
     }, [session_active])
-   
+
 
     const configTextInput = [
 
@@ -97,35 +98,43 @@ function Login() {
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar backgroundColor={colors.blue} />
-            <View style={styles.viewContainerLogin}>
-                <Image
-                    source={require('../Assets/General/wbooks_logo.png')}
-                    style={styles.LogoCenter}
-                />
-                <View style={styles.viewTextInputLogin}>
-                    {
-                        configTextInput.map((textInput, index) => {
-                            return (
-                                <TextInputCustom
-                                    key={index}
-                                    nameInput={textInput.nameInput}
-                                    placeholder={textInput.placeholderInput}
-                                    valueInput={textInput.valueInput}
-                                    setCustomWithValue={setSignIn}
-                                    label={textInput.valueInput !== ''}
-                                    errorInput={textInput.errorInput}
-                                    errorText={textInput.errorText}
-                                />
-                            )
-                        })
-                    }
-                    <ButtonCustom
-                        onPressCustom={handleOnLogin}
-                        textButton={lang.t("button.login", { locale: languages })}
-                        disabledCustom={handleDisabledButton()}
+            <KeyboardAvoidingView
+                behavior={Platform.OS == 'ios' ? 'position' : 'height'}
+                style={{
+                    flex: 1,
+                }}
+                contentContainerStyle={{ flex: 1 }}
+                keyboardVerticalOffset={Platform.OS == 'ios' ? -200 : 20}>
+                <View style={styles.viewContainerLogin}>
+                    <Image
+                        source={require('../Assets/General/wbooks_logo.png')}
+                        style={styles.LogoCenter}
                     />
+                    <View style={styles.viewTextInputLogin}>
+                        {
+                            configTextInput.map((textInput, index) => {
+                                return (
+                                    <TextInputCustom
+                                        key={index}
+                                        nameInput={textInput.nameInput}
+                                        placeholder={textInput.placeholderInput}
+                                        valueInput={textInput.valueInput}
+                                        setCustomWithValue={setSignIn}
+                                        label={textInput.valueInput !== ''}
+                                        errorInput={textInput.errorInput}
+                                        errorText={textInput.errorText}
+                                    />
+                                )
+                            })
+                        }
+                        <ButtonCustom
+                            onPressCustom={handleOnLogin}
+                            textButton={lang.t("button.login", { locale: languages })}
+                            disabledCustom={handleDisabledButton()}
+                        />
+                    </View>
                 </View>
-            </View>
+            </KeyboardAvoidingView>
         </SafeAreaView>
     );
 }
