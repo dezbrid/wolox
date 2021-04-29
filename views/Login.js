@@ -127,12 +127,14 @@ function Login() {
                                 )
                             })
                         }
-                        <View style={{flexDirection:'row'}}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'flex-start', marginVertical: 10 }}>
                             <CheckBox
                                 value={term}
                                 onValueChange={(newValue) => setTerm(newValue)}
+                                boxType='square'
+                                style={{transform:[{scaleX:0.8},{scaleY:0.8}],width:20,height:20}}
                             />
-                            <Text style={{alignSelf:'center'}}>
+                            <Text style={{ alignSelf: 'center' }}>
                                 {lang.t("login.term", { locale: languages })}
                             </Text>
                         </View>
