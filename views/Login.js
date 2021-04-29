@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import {
     SafeAreaView,
     View,
-    Text,
-    Button,
     Image,
     StatusBar
 } from 'react-native';
@@ -68,6 +66,16 @@ function Login() {
             errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.email", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyEmail", { locale: languages })}`,
         },
     ]
+    function validateTextwithRegex(key) {
+        setSignIn((obj) => ({
+            ...obj,
+            [key]: {
+                ...obj[key],
+                value: obj[key].value.trim(),
+                error: !obj[key].regex.test(obj[key].value.trim())
+            }
+        }))
+    }
     function onLogin() {
         dispatch({ type: LOGIN_ACTION, payload: true })
 
@@ -94,8 +102,8 @@ function Login() {
                                     label={textInput.valueInput !== ''}
                                     errorInput={textInput.errorInput}
                                     errorText={textInput.errorText}
-                                    //handleOnBlur={HandleRegexTextInput}
-                                     />
+                                    onBlurCustom={validateTextwithRegex}
+                                />
                             )
                         })
                     }

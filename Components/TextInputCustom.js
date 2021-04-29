@@ -26,7 +26,7 @@ const TextInputCustom = (props) => {
     } = props
 
 
-    const handleOnChangeText = (newValue) => {
+    function handleOnChangeText(newValue) {
         if (setCustom) {
             setCustom((obj) => ({
                 ...obj,
@@ -41,9 +41,9 @@ const TextInputCustom = (props) => {
         }
 
     }
-    function handleOnBlur(name,set) {
-        if(onBlurCustom){
-            onBlurCustom(name, name)
+    function handleOnBlur() {
+        if (onBlurCustom) {
+            onBlurCustom(nameInput)
         }
     }
     /*const IconCustom = () => {
@@ -76,7 +76,7 @@ const TextInputCustom = (props) => {
                     onChangeText={text => handleOnChangeText(text)}
                     value={valueInput}
                     style={styles.flexOne}
-                    onBlur={() => handleOnBlur(nameInput, setCustomWithValue)}
+                    onBlur={handleOnBlur}
                 />
                 {/*icon && <IconCustom />*/}
 
