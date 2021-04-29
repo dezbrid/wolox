@@ -46,7 +46,11 @@ function Login() {
             navigation.navigate("Main")
         }
     }, [session_active])
+   
+
     const configTextInput = [
+
+
         {
             nameInput: 'name',
             placeholderInput: lang.t("textInput.name", { locale: languages }),
@@ -69,16 +73,7 @@ function Login() {
             errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.email", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyEmail", { locale: languages })}`,
         },
     ]
-    function validateTextwithRegex(key) {
-        setSignIn((obj) => ({
-            ...obj,
-            [key]: {
-                ...obj[key],
-                value: obj[key].value.trim(),
-                error: !obj[key].regex.test(obj[key].value.trim())
-            }
-        }))
-    }
+
     function handleOnLogin() {
         onLogin()
     }
@@ -92,13 +87,9 @@ function Login() {
         for (const key in signIn) {
             if (signIn[key].value.trim().length === 0) {
                 emptyText = true
-                break 
+                break
             }
-            if (!signIn[key].regex.test(signIn[key].value.trim())) {
-                errorText = true
-                break 
-            }
-
+            errorText = errorText || signIn[key].error
         }
         return emptyText || errorText
     }
@@ -124,7 +115,6 @@ function Login() {
                                     label={textInput.valueInput !== ''}
                                     errorInput={textInput.errorInput}
                                     errorText={textInput.errorText}
-                                    onBlurCustom={validateTextwithRegex}
                                 />
                             )
                         })

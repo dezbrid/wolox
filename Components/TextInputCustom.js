@@ -36,7 +36,11 @@ const TextInputCustom = (props) => {
         if (setCustomWithValue) {
             setCustomWithValue((obj) => ({
                 ...obj,
-                [nameInput]: { ...obj[nameInput], value: newValue }
+                [nameInput]: { 
+                    ...obj[nameInput], 
+                    value: newValue,
+                    error: !obj[nameInput].regex.test(newValue)
+                }
             }))
         }
 
