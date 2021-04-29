@@ -75,6 +75,7 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.grayLight,
         borderRadius: 50,
         paddingLeft: 10,
+        minHeight:60,
     },
     errorTextInputText: {
         color: colors.redLight,

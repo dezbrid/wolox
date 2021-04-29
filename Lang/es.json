@@ -14,6 +14,9 @@
   },
   "button":{
     "login":"Acceso"
+  },
+  "login":{
+    "term":"Acepto terminos y condiciones"
   }
   
 }
