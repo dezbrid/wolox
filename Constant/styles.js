@@ -3,6 +3,8 @@ import { StyleSheet } from 'react-native';
 
 export const colors = {
     blue: "#0bb4e4",
+    blueDark: "#0087ae",
+    redLight: "#ff4d4d",
     white: "#ffffff",
     brown: "#38261C",
     brownLight: "#664533",
@@ -11,6 +13,10 @@ export const colors = {
     grayLight: "#e6e6e6"
 }
 export const styles = StyleSheet.create({
+    flexOne: { flex: 1 },
+    flexColumn: {
+        flexDirection: 'column'
+    },
     container: {
         flex: 1,
         flexDirection: "column",
@@ -38,5 +44,42 @@ export const styles = StyleSheet.create({
         borderRadius: 15,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
-    }
+        justifyContent: 'center'
+    },
+    opacityOn: {
+        opacity: 1
+    },
+    opacityOff: {
+        opacity: 0
+    },
+    labelTextInput: {
+        fontSize: 8,
+        marginLeft: 10,
+        backgroundColor: colors.blueDark,
+        color: colors.white,
+        paddingHorizontal: 5,
+        borderRadius: 3,
+        marginBottom: -6,
+        alignSelf: 'flex-start',
+        zIndex: 1,
+        elevation: 1
+    },
+    errorTextInputContainer: {
+        borderColor: colors.redLight,
+        borderWidth: 0.5
+    },
+    textInputContainer: {
+        flexDirection: 'row',
+        backgroundColor: colors.grayLight,
+        borderRadius: 50,
+        paddingLeft: 10,
+    },
+    errorTextInputText: {
+        color: colors.redLight,
+        paddingLeft: 20,
+        fontSize: 10,
+        marginTop: -2,
+        marginBottom: 8
+    },
+
 });

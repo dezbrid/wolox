@@ -13,6 +13,7 @@ import { LOGIN_ACTION } from '../Constant/actionType';
 import { onlyLetter, emailValidation } from '../Constant/regex';
 import lang from '../Lang/translations';
 import { styles, colors } from '../Constant/styles';
+import { TextInputCustom } from '../Components';
 
 function Login() {
     const navigation = useNavigation();
@@ -80,10 +81,24 @@ function Login() {
                     style={styles.LogoCenter}
                 />
                 <View style={styles.viewTextInputLogin}>
-                    <Text> Login</Text>
-                    <Button
-                        onPress={onLogin}
-                        title="main" />
+                    {
+                        configTextInput.map((textInput, index) => {
+                            return (
+                                <TextInputCustom
+                                    key={index}
+                                    nameInput={textInput.nameInput}
+                                    placeholder={textInput.placeholderInput}
+                                    // icon={textInput.icon}
+                                    valueInput={textInput.valueInput}
+                                    setCustomWithValue={setSignIn}
+                                    label={textInput.valueInput !== ''}
+                                    errorInput={textInput.errorInput}
+                                    errorText={textInput.errorText}
+                                    //handleOnBlur={HandleRegexTextInput}
+                                     />
+                            )
+                        })
+                    }
                 </View>
             </View>
         </SafeAreaView>
