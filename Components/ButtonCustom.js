@@ -23,7 +23,7 @@ const ButtonCustom = (props) => {
         >
             <ImageBackground
                 source={require('../Assets/General/img_main_button.png')}
-                style={styles.buttonImagen } resizeMode="cover">
+                style={[styles.buttonImagen,disabledCustom && {backgroundColor: colors.blueGray}] } resizeMode="cover">
                 <Text style={styles.buttonText}>{textButton}</Text>
             </ImageBackground >
         </TouchableHighlight>

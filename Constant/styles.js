@@ -91,7 +91,7 @@ export const styles = StyleSheet.create({
     },
     buttonDisable: {
         opacity: 0.3,
-        backgroundColor: colors.blueGray
+        //backgroundColor: colors.blueGray
     },
     buttonText: {
         fontSize: 13,
