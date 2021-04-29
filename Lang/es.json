@@ -11,6 +11,9 @@
     "invalid":"%{textInput} invalido",
     "onlyLatters":", solo use letras",
     "onlyEmail":", ejemplo@correo.com es un correo valido"
+  },
+  "button":{
+    "login":"Acceso"
   }
   
 }

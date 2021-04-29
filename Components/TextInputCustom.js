@@ -6,7 +6,7 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native';
-import { colors, styles } from "../Constant/styles";
+import {  styles } from "../Constant/styles";
 import PropTypes from 'prop-types';
 
 const TextInputCustom = (props) => {

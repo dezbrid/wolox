@@ -11,6 +11,9 @@
     "invalid":"Invalid %{textInput}",
     "onlyLatters":", only use latters",
     "onlyEmail":", valid email is example@email.com"
+  },
+  "button":{
+    "login":"Login"
   }
 
 }

@@ -11,7 +11,10 @@ import { LOGIN_ACTION } from '../Constant/actionType';
 import { onlyLetter, emailValidation } from '../Constant/regex';
 import lang from '../Lang/translations';
 import { styles, colors } from '../Constant/styles';
-import { TextInputCustom } from '../Components';
+import {
+    TextInputCustom,
+    ButtonCustom
+} from '../Components';
 
 function Login() {
     const navigation = useNavigation();
@@ -76,10 +79,14 @@ function Login() {
             }
         }))
     }
+    function handleOnLogin() {
+        onLogin()
+    }
     function onLogin() {
         dispatch({ type: LOGIN_ACTION, payload: true })
 
     }
+
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar backgroundColor={colors.blue} />
@@ -96,7 +103,6 @@ function Login() {
                                     key={index}
                                     nameInput={textInput.nameInput}
                                     placeholder={textInput.placeholderInput}
-                                    // icon={textInput.icon}
                                     valueInput={textInput.valueInput}
                                     setCustomWithValue={setSignIn}
                                     label={textInput.valueInput !== ''}
@@ -107,6 +113,10 @@ function Login() {
                             )
                         })
                     }
+                    <ButtonCustom
+                        onPressCustom={handleOnLogin}
+                        textButton={lang.t("button.login", { locale: languages })}
+                    />
                 </View>
             </View>
         </SafeAreaView>

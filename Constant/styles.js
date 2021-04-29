@@ -4,6 +4,8 @@ import { StyleSheet } from 'react-native';
 export const colors = {
     blue: "#0bb4e4",
     blueDark: "#0087ae",
+    blueOverlay:'#004d64',
+    blueGray:'#202328',
     redLight: "#ff4d4d",
     white: "#ffffff",
     brown: "#38261C",
@@ -22,7 +24,7 @@ export const styles = StyleSheet.create({
         flexDirection: "column",
     },
     imageBackground: {
-        flex: 1,
+       flex: 1,
         resizeMode: "cover",
         justifyContent: "center"
     },
@@ -81,5 +83,23 @@ export const styles = StyleSheet.create({
         marginTop: -2,
         marginBottom: 8
     },
+    buttonContainer: {
+        justifyContent: 'center',
+        borderRadius: 50,
+        overflow: 'hidden',
+    },
+    buttonDisable: {
+        opacity: 0.4,
+        backgroundColor: colors.blueGray
+    },
+    buttonText: {
+        fontSize: 13,
+        color: colors.white,
+        textAlign: 'center',
+
+    },
+    buttonImagen:{
+        padding: 12,
+    }
 
 });
