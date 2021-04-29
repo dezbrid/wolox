@@ -132,9 +132,9 @@ function Login() {
                                 value={term}
                                 onValueChange={(newValue) => setTerm(newValue)}
                                 boxType='square'
-                                onCheckColor={colors.blue}
-                                onTintColor={colors.blue}
-                                tintColors={{ true: colors.blue, false: colors.gray }}
+                                onCheckColor={colors.blueDark}
+                                onTintColor={colors.blueDark}
+                                tintColors={{ true: colors.blueDark, false: colors.gray }}
                                 style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }], width: 20, height: 20 }}
                             />
                             <Text style={{ alignSelf: 'center', marginLeft: 10 }}>
