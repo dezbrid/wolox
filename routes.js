@@ -9,7 +9,7 @@ import {
     Rentals,
     Settings,
     Wishlist
-} from './Views'
+} from './Views';
 import {
     Image
 } from 'react-native';

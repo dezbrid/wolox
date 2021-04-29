@@ -3,7 +3,7 @@ import React, { useReducer, useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import Routes from './Routes';
+import Routes from './routes';
 import { StoreContext, initialState, storeReducer } from './store';
 import { ASYNCSTORAGE_ACTION } from './Constant/actionType';
 import { PreLoad } from './Components';
