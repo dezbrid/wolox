@@ -8,6 +8,7 @@ import {
     Text
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
+import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
 import { LOGIN_ACTION } from '../Constant/actionType';
@@ -127,6 +128,15 @@ function Login() {
                                 )
                             })
                         }
+                        <Picker
+                            selectedValue={age}
+                            mode='dropdown'
+                            onValueChange={(itemValue, itemIndex) =>
+                                setAge(itemValue)
+                            }>
+                            <Picker.Item label="Java" value="java" />
+                            <Picker.Item label="JavaScript" value="js" />
+                        </Picker>
                         <View style={styles.viewCheckBox}>
                             <CheckBox
                                 value={term}
