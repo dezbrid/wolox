@@ -90,7 +90,7 @@ export const styles = StyleSheet.create({
         overflow: 'hidden',
     },
     buttonDisable: {
-        opacity: 0.4,
+        opacity: 0.3,
         backgroundColor: colors.blueGray
     },
     buttonText: {

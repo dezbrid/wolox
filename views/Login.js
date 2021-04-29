@@ -100,11 +100,9 @@ function Login() {
             <StatusBar backgroundColor={colors.blue} />
             <KeyboardAvoidingView
                 behavior={Platform.OS == 'ios' ? 'position' : 'height'}
-                style={{
-                    flex: 1,
-                }}
-                contentContainerStyle={{ flex: 1 }}
-                keyboardVerticalOffset={Platform.OS == 'ios' ? -200 : 20}>
+                style={styles.flexOne}
+                contentContainerStyle={styles.flexOne}
+                keyboardVerticalOffset={Platform.OS == 'ios' ? -100 : 20}>
                 <View style={styles.viewContainerLogin}>
                     <Image
                         source={require('../Assets/General/wbooks_logo.png')}
