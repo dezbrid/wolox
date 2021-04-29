@@ -10,6 +10,7 @@ import { StoreContext } from '../store';
 import { LOGIN_ACTION } from '../Constant/actionType';
 import { onlyLetter, emailValidation } from '../Constant/regex';
 import lang from '../Lang/translations';
+import { styles, colors } from '../Constant/styles';
 
 function Login() {
     const navigation = useNavigation();
@@ -47,21 +48,21 @@ function Login() {
             placeholderInput: lang.t("textInput.name", { locale: languages }),
             valueInput: signIn.name.value,
             errorInput: signIn.name.error,
-            errorText:  `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.name", { locale: languages }),locale: languages })}${lang.t("errorInput.onlyLatters", { locale: languages })}`,
+            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.name", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyLatters", { locale: languages })}`,
         },
         {
             nameInput: 'last_name',
             placeholderInput: lang.t("textInput.last_name", { locale: languages }),
             valueInput: signIn.last_name.value,
             errorInput: signIn.last_name.error,
-            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.last_name", { locale: languages }),locale: languages })}${lang.t("errorInput.onlyLatters", { locale: languages })}`,
+            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.last_name", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyLatters", { locale: languages })}`,
         },
         {
             nameInput: 'email',
             placeholderInput: lang.t("textInput.email", { locale: languages }),
             valueInput: signIn.email.value,
             errorInput: signIn.email.error,
-            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.email", { locale: languages }),locale: languages })}${lang.t("errorInput.onlyEmail", { locale: languages })}`,
+            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.email", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyEmail", { locale: languages })}`,
         },
     ]
     function onLogin() {
@@ -69,12 +70,25 @@ function Login() {
 
     }
     return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <View style={{ flex: 1 }}>
-                <Text> Login</Text>
-                <Button
-                    onPress={onLogin}
-                    title="main" />
+        <SafeAreaView style={styles.container}>
+            <View style={{ flex: 1, backgroundColor: colors.blue }}>
+                <View style={{ flex: 3, }}>
+
+                </View>
+                <View style={{
+                    flex: 5,
+                    backgroundColor: colors.white,
+                    paddingHorizontal: 20,
+                    paddingTop: 30,
+                    borderRadius: 15,
+                    borderBottomLeftRadius: 0,
+                    borderBottomRightRadius: 0,
+                }}>
+                    <Text> Login</Text>
+                    <Button
+                        onPress={onLogin}
+                        title="main" />
+                </View>
             </View>
         </SafeAreaView>
     );

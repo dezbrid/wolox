@@ -16,7 +16,7 @@ function Library() {
     return (
         <View>
             <Text> Library</Text>
-            <Text> {lang.t("universal.close", { locale: languages })}</Text>
+            <Text> {`${lang.t("errorInput.invalid", { textInput: lang.t("textInput.email", { locale: languages }),locale: languages })}${lang.t("errorInput.onlyEmail", { locale: languages })}`}</Text>
             <Button
                 onPress={() => {
                     storeContext.dispatch({ type: LANGUAGES_ACTION, payload: 'es' })
