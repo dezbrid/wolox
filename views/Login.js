@@ -35,10 +35,10 @@ function Login() {
             value: '',
             error: false,
             regex: emailValidation,
-        },
-        age: '',
-        terms: false
+        }
     })
+    const [age, setAge] = useState('')
+    const [term, setTerm] = useState(false)
     const session_active = storeContext.state.session_active;
     const dispatch = storeContext.dispatch
     useEffect(() => {
@@ -86,6 +86,22 @@ function Login() {
         dispatch({ type: LOGIN_ACTION, payload: true })
 
     }
+    function handleDisabledButton() {
+        let emptyText = false
+        let errorText = false
+        for (const key in signIn) {
+            if (signIn[key].value.trim().length === 0) {
+                emptyText = true
+                break 
+            }
+            if (!signIn[key].regex.test(signIn[key].value.trim())) {
+                errorText = true
+                break 
+            }
+
+        }
+        return emptyText || errorText
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -116,6 +132,7 @@ function Login() {
                     <ButtonCustom
                         onPressCustom={handleOnLogin}
                         textButton={lang.t("button.login", { locale: languages })}
+                        disabledCustom={handleDisabledButton()}
                     />
                 </View>
             </View>

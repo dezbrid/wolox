@@ -11,14 +11,13 @@ const ButtonCustom = (props) => {
     const {
         onPressCustom,
         textButton,
-        overlayColor,
         disabledCustom
     } = props
     return (
 
         <TouchableHighlight
             style={[styles.buttonContainer, disabledCustom && styles.buttonDisable]}
-            underlayColor={overlayColor}
+            underlayColor={colors.blueOverlay}
             onPress={onPressCustom}
             disabled={disabledCustom}
         >
@@ -39,7 +38,6 @@ ButtonCustom.propTypes = {
 
 }
 ButtonCustom.defaultProps = {
-    overlayColor: colors.blueOverlay,
     disabledCustom: false
 }
 
