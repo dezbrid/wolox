@@ -81,7 +81,7 @@ export const styles = StyleSheet.create({
         color: colors.redLight,
         paddingLeft: 20,
         fontSize: 10,
-        marginTop: -2,
+        marginTop: -1,
         marginBottom: 5
     },
     buttonContainer: {
