@@ -114,7 +114,6 @@
 				726D0C184EA633DB3F43BB74 /* Pods-wolox-woloxTests.debug.xcconfig */,
 				781280C0B14A16637BD70EE9 /* Pods-wolox-woloxTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
