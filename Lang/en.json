@@ -2,10 +2,11 @@
   "universal": {
     "close": "close"
   },
-  "textInput": {
+  "placeholder": {
     "name": "Name",
     "last_name": "Last Name",
-    "email": "Email"
+    "email": "Email",
+    "age":"Age"
   },
   "errorInput":{
     "invalid":"Invalid %{textInput}",

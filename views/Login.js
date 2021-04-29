@@ -57,24 +57,24 @@ function Login() {
 
         {
             nameInput: 'name',
-            placeholderInput: lang.t("textInput.name", { locale: languages }),
+            placeholderInput: lang.t("placeholder.name", { locale: languages }),
             valueInput: signIn.name.value,
             errorInput: signIn.name.error,
-            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.name", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyLatters", { locale: languages })}`,
+            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("placeholder.name", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyLatters", { locale: languages })}`,
         },
         {
             nameInput: 'last_name',
-            placeholderInput: lang.t("textInput.last_name", { locale: languages }),
+            placeholderInput: lang.t("placeholder.last_name", { locale: languages }),
             valueInput: signIn.last_name.value,
             errorInput: signIn.last_name.error,
-            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.last_name", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyLatters", { locale: languages })}`,
+            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("placeholder.last_name", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyLatters", { locale: languages })}`,
         },
         {
             nameInput: 'email',
-            placeholderInput: lang.t("textInput.email", { locale: languages }),
+            placeholderInput: lang.t("placeholder.email", { locale: languages }),
             valueInput: signIn.email.value,
             errorInput: signIn.email.error,
-            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.email", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyEmail", { locale: languages })}`,
+            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("placeholder.email", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyEmail", { locale: languages })}`,
         },
     ]
 
@@ -130,7 +130,9 @@ function Login() {
                         }
                         <PickerCustom
                             value={age}
-                            setValue={setAge} />
+                            setValue={setAge} 
+                            placeholder={lang.t("placeholder.age", { locale: languages })}
+                            label={age !== ''}/>
                         <View style={styles.viewCheckBox}>
                             <CheckBox
                                 value={term}
