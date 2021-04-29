@@ -82,7 +82,7 @@ export const styles = StyleSheet.create({
         paddingLeft: 20,
         fontSize: 10,
         marginTop: -2,
-        marginBottom: 8
+        marginBottom: 5
     },
     buttonContainer: {
         justifyContent: 'center',

@@ -4,8 +4,10 @@ import {
     View,
     Image,
     StatusBar,
-    KeyboardAvoidingView
+    KeyboardAvoidingView,
+    Text
 } from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
 import { LOGIN_ACTION } from '../Constant/actionType';
@@ -125,6 +127,16 @@ function Login() {
                                 )
                             })
                         }
+                        <View style={{flexDirection:'row'}}>
+                            <CheckBox
+                                value={term}
+                                onValueChange={(newValue) => setTerm(newValue)}
+                            />
+                            <Text style={{alignSelf:'center'}}>
+                                {lang.t("login.term", { locale: languages })}
+                            </Text>
+                        </View>
+
                         <ButtonCustom
                             onPressCustom={handleOnLogin}
                             textButton={lang.t("button.login", { locale: languages })}
