@@ -9,11 +9,12 @@ import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
 import { LOGIN_ACTION } from '../Constant/actionType';
 import { onlyLetter, emailValidation } from '../Constant/regex';
-
+import lang from '../Lang/translations';
 
 function Login() {
     const navigation = useNavigation();
     const storeContext = useContext(StoreContext);
+    const languages = storeContext.state.languages
     const [signIn, setSignIn] = useState({
         name: {
             value: '',
@@ -40,6 +41,29 @@ function Login() {
             navigation.navigate("Main")
         }
     }, [session_active])
+    const configTextInput = [
+        {
+            nameInput: 'name',
+            placeholderInput: lang.t("textInput.name", { locale: languages }),
+            valueInput: signIn.name.value,
+            errorInput: signIn.name.error,
+            errorText:  `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.name", { locale: languages }),locale: languages })}${lang.t("errorInput.onlyLatters", { locale: languages })}`,
+        },
+        {
+            nameInput: 'last_name',
+            placeholderInput: lang.t("textInput.last_name", { locale: languages }),
+            valueInput: signIn.last_name.value,
+            errorInput: signIn.last_name.error,
+            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.last_name", { locale: languages }),locale: languages })}${lang.t("errorInput.onlyLatters", { locale: languages })}`,
+        },
+        {
+            nameInput: 'email',
+            placeholderInput: lang.t("textInput.email", { locale: languages }),
+            valueInput: signIn.email.value,
+            errorInput: signIn.email.error,
+            errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("textInput.email", { locale: languages }),locale: languages })}${lang.t("errorInput.onlyEmail", { locale: languages })}`,
+        },
+    ]
     function onLogin() {
         dispatch({ type: LOGIN_ACTION, payload: true })
 

@@ -1,6 +1,16 @@
 {
   "universal": {
     "close": "cerrar"
+  },
+  "textInput": {
+    "name": "Nombre",
+    "last_name": "Apellido",
+    "email": "Correo Electronico"
+  },
+  "errorInput":{
+    "invalid":"%{textInput} invalido",
+    "onlyLatters":", solo use letras",
+    "onlyEmail":", ejemplo@correo.com es un correo valido"
   }
   
 }
