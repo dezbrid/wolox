@@ -7,7 +7,7 @@ import {
 import PropTypes from 'prop-types';
 import { colors, styles } from "../Constant/styles";
 
-const ButtonCustom = (props) => {
+function ButtonCustom (props) {
     const {
         onPressCustom,
         textButton,

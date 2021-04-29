@@ -6,10 +6,10 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native';
-import {  styles } from "../Constant/styles";
+import { styles } from "../Constant/styles";
 import PropTypes from 'prop-types';
 
-const TextInputCustom = (props) => {
+function TextInputCustom(props) {
     const {
         valueInput,
         setCustom,
@@ -36,8 +36,8 @@ const TextInputCustom = (props) => {
         if (setCustomWithValue) {
             setCustomWithValue((obj) => ({
                 ...obj,
-                [nameInput]: { 
-                    ...obj[nameInput], 
+                [nameInput]: {
+                    ...obj[nameInput],
                     value: newValue,
                     error: !obj[nameInput].regex.test(newValue)
                 }
@@ -72,7 +72,7 @@ const TextInputCustom = (props) => {
     }*/
 
     return (
-        <View style={styles.flexColumn}>
+        <View >
             <Text style={[label ? styles.opacityOn : styles.opacityOff, styles.labelTextInput]}>{placeholder}</Text>
             <View style={[errorInput && styles.errorTextInputContainer, styles.textInputContainer]}>
                 <TextInput
