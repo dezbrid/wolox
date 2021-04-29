@@ -4,8 +4,8 @@ import { StyleSheet } from 'react-native';
 export const colors = {
     blue: "#0bb4e4",
     blueDark: "#0087ae",
-    blueOverlay:'#004d64',
-    blueGray:'#202328',
+    blueOverlay: '#004d64',
+    blueGray: '#202328',
     redLight: "#ff4d4d",
     white: "#ffffff",
     brown: "#38261C",
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
         flexDirection: "column",
     },
     imageBackground: {
-       flex: 1,
+        flex: 1,
         resizeMode: "cover",
         justifyContent: "center"
     },
@@ -75,7 +75,7 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.grayLight,
         borderRadius: 50,
         paddingLeft: 10,
-        minHeight:40,
+        minHeight: 40,
     },
     errorTextInputText: {
         color: colors.redLight,
@@ -99,8 +99,22 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
 
     },
-    buttonImagen:{
+    buttonImagen: {
         padding: 12,
+    },
+    viewCheckBox: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        marginVertical: 10,
+        marginHorizontal: 5
+    },
+    checkBox: {
+        transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }],
+        width: 20, height: 20
+    },
+    textCheckBox:{
+        alignSelf: 'center',
+         marginLeft: 10
     }
 
 });

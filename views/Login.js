@@ -127,7 +127,7 @@ function Login() {
                                 )
                             })
                         }
-                        <View style={{ flexDirection: 'row', justifyContent: 'flex-start', marginVertical: 10 }}>
+                        <View style={styles.viewCheckBox}>
                             <CheckBox
                                 value={term}
                                 onValueChange={(newValue) => setTerm(newValue)}
@@ -135,9 +135,9 @@ function Login() {
                                 onCheckColor={colors.blueDark}
                                 onTintColor={colors.blueDark}
                                 tintColors={{ true: colors.blueDark, false: colors.gray }}
-                                style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }], width: 20, height: 20 }}
+                                style={styles.checkBox}
                             />
-                            <Text style={{ alignSelf: 'center', marginLeft: 10 }}>
+                            <Text style={styles.textCheckBox}>
                                 {lang.t("login.term", { locale: languages })}
                             </Text>
                         </View>
