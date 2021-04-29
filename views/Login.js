@@ -3,7 +3,9 @@ import {
     SafeAreaView,
     View,
     Text,
-    Button
+    Button,
+    Image,
+    StatusBar
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
@@ -71,19 +73,13 @@ function Login() {
     }
     return (
         <SafeAreaView style={styles.container}>
-            <View style={{ flex: 1, backgroundColor: colors.blue }}>
-                <View style={{ flex: 3, }}>
-
-                </View>
-                <View style={{
-                    flex: 5,
-                    backgroundColor: colors.white,
-                    paddingHorizontal: 20,
-                    paddingTop: 30,
-                    borderRadius: 15,
-                    borderBottomLeftRadius: 0,
-                    borderBottomRightRadius: 0,
-                }}>
+            <StatusBar backgroundColor={colors.blue} />
+            <View style={styles.viewContainerLogin}>
+                <Image
+                    source={require('../Assets/General/wbooks_logo.png')}
+                    style={styles.LogoCenter}
+                />
+                <View style={styles.viewTextInputLogin}>
                     <Text> Login</Text>
                     <Button
                         onPress={onLogin}

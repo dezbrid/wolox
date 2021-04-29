@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-export const colors={
+export const colors = {
     blue: "#0bb4e4",
     white: "#ffffff",
     brown: "#38261C",
@@ -21,9 +21,22 @@ export const styles = StyleSheet.create({
         justifyContent: "center"
     },
     LogoCenter: {
-        flex: 1,
+        flex: 3,
         justifyContent: "center",
         resizeMode: "center",
         alignSelf: "center"
+    },
+    viewContainerLogin: {
+        flex: 1,
+        backgroundColor: colors.blue
+    },
+    viewTextInputLogin: {
+        flex: 5,
+        backgroundColor: colors.white,
+        paddingHorizontal: 20,
+        paddingTop: 30,
+        borderRadius: 15,
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
     }
 });
