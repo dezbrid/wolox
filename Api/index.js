@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {
     URL_API,
-} from '../constant/url';
+} from '../Constant/url';
 
 export const apiCall = (url, data, headers, method) => axios({
     method,
