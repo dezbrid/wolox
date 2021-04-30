@@ -2,3 +2,4 @@ export const LOGIN_ACTION = 'LOGIN';
 export const ASYNCSTORAGE_ACTION = 'ASYNCSTORAGE';
 export const LANGUAGES_ACTION = 'LANGUAGES';
 export const LOGOUT_ACTION = 'LOGOUT';
+export const BOOKS_ACTION='BOOKS';

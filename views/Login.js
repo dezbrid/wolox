@@ -12,7 +12,7 @@ import CheckBox from '@react-native-community/checkbox';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
 import { SIGN_IN, BOOKS } from '../Constant/url';
-import { LOGIN_ACTION, LANGUAGES_ACTION } from '../Constant/actionType';
+import { LOGIN_ACTION, LANGUAGES_ACTION, BOOKS_ACTION } from '../Constant/actionType';
 import { onlyLetter, emailValidation } from '../Constant/regex';
 import lang from '../Lang/translations';
 import { styles, colors } from '../Constant/styles';
@@ -49,11 +49,11 @@ function Login() {
     const [langSwitch, setLangSwitch] = useState(false);
     const session_active = storeContext.state.session_active;
     const dispatch = storeContext.dispatch;
-    useEffect(() => {
-        if (session_active) {
-            navigation.navigate("Main")
-        }
-    }, [session_active]);
+    /* useEffect(() => {
+         if (session_active) {
+             navigation.navigate("Main")
+         }
+     }, [session_active]);*/
 
 
     const configTextInput = [
@@ -97,21 +97,22 @@ function Login() {
     };
 
     async function handleOnLogin() {
-        const dataToSend={
-            name:signIn.name.value,
-            last_name:signIn.last_name.value,
-            email:signIn.email.value,
-            age:age,
-            term:term
+        const dataToSend = {
+            name: signIn.name.value,
+            last_name: signIn.last_name.value,
+            email: signIn.email.value,
+            age: age,
+            term: term
         }
         try {
-            const response = await apiCall(SIGN_IN,dataToSend,null,'POST');
-            console.log('response',response)
+            const responseSignIn = await apiCall(SIGN_IN, dataToSend, null, 'POST');
+            dispatch({ type: LOGIN_ACTION, payload: responseSignIn.data })
+            const responseBooks = await apiCall(BOOKS, null, null, 'GET')
+            dispatch({ type: BOOKS_ACTION, payload: responseBooks.data })
+            navigation.navigate("Main")
         } catch (error) {
-            console.log('error',error)
-            console.log('error',error.response)
+            
         }
-        // dispatch({ type: LOGIN_ACTION, payload: true })
     };
     function handleDisabledButton() {
         let emptyText = false
