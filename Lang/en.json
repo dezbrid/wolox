@@ -14,7 +14,8 @@
     "onlyEmail":", valid email is example@email.com"
   },
   "button":{
-    "login":"Login"
+    "login":"Login",
+    "lang":"English"
   },
   "login":{
     "term":"Accept terms and conditions"

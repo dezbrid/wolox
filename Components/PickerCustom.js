@@ -6,7 +6,7 @@ import {
     TouchableNativeFeedback,
     Modal
 } from 'react-native';
-import { styles } from '../Constant/styles'
+import { styles } from '../Constant/styles';
 import { Picker } from '@react-native-picker/picker';
 import PropTypes from 'prop-types';
 
@@ -18,13 +18,13 @@ function PickerCustom(props) {
         label,
         items,
     } = props
-    const [openModal, setOpenModal] = useState(false)
+    const [openModal, setOpenModal] = useState(false);
     function handleModalOpen() {
         setOpenModal(true)
-    }
+    };
     function handleModalClose() {
         setOpenModal(false)
-    }
+    };
     if (Platform.OS == 'ios') {
         return (
             <View >

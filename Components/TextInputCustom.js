@@ -44,12 +44,12 @@ function TextInputCustom(props) {
             }))
         }
 
-    }
+    };
     function handleOnBlur() {
         if (onBlurCustom) {
             onBlurCustom(nameInput)
         }
-    }
+    };
     /*const IconCustom = () => {
         if (iconTouch) {
             return (

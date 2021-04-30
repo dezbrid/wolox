@@ -6,18 +6,18 @@
     "name": "Nombre",
     "last_name": "Apellido",
     "email": "Correo Electronico",
-    "age":"Edad"
+    "age": "Edad"
   },
-  "errorInput":{
-    "invalid":"%{textInput} invalido",
-    "onlyLatters":", solo use letras",
-    "onlyEmail":", ejemplo@correo.com es un correo valido"
+  "errorInput": {
+    "invalid": "%{textInput} invalido",
+    "onlyLatters": ", solo use letras",
+    "onlyEmail": ", ejemplo@correo.com es un correo valido"
   },
-  "button":{
-    "login":"Acceso"
+  "button": {
+    "login": "Acceso",
+    "lang": "Español"
   },
-  "login":{
-    "term":"Acepto terminos y condiciones"
+  "login": {
+    "term": "Acepto terminos y condiciones"
   }
-  
 }

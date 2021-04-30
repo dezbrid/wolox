@@ -5,16 +5,16 @@ import {
     Image,
     StatusBar,
     KeyboardAvoidingView,
-    Text
+    Text,
+    Switch
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
-import { LOGIN_ACTION } from '../Constant/actionType';
+import { LOGIN_ACTION ,LANGUAGES_ACTION} from '../Constant/actionType';
 import { onlyLetter, emailValidation } from '../Constant/regex';
 import lang from '../Lang/translations';
 import { styles, colors } from '../Constant/styles';
-import {ARRAY_AGES} from '../Constant/data';
 import {
     TextInputCustom,
     ButtonCustom,
@@ -24,7 +24,7 @@ import {
 function Login() {
     const navigation = useNavigation();
     const storeContext = useContext(StoreContext);
-    const languages = storeContext.state.languages
+    const languages = storeContext.state.languages;
     const [signIn, setSignIn] = useState({
         name: {
             value: '',
@@ -41,21 +41,20 @@ function Login() {
             error: false,
             regex: emailValidation,
         }
-    })
-    const [age, setAge] = useState('18')
-    const [term, setTerm] = useState(false)
+    });
+    const [age, setAge] = useState('18');
+    const [term, setTerm] = useState(false);
+    const [langSwitch, setLangSwitch] = useState(false);
     const session_active = storeContext.state.session_active;
-    const dispatch = storeContext.dispatch
+    const dispatch = storeContext.dispatch;
     useEffect(() => {
         if (session_active) {
             navigation.navigate("Main")
         }
-    }, [session_active])
+    }, [session_active]);
 
 
     const configTextInput = [
-
-
         {
             nameInput: 'name',
             placeholderInput: lang.t("placeholder.name", { locale: languages }),
@@ -77,15 +76,29 @@ function Login() {
             errorInput: signIn.email.error,
             errorText: `${lang.t("errorInput.invalid", { textInput: lang.t("placeholder.email", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyEmail", { locale: languages })}`,
         },
-    ]
+    ];
 
+    function returnArrayAges() {
+        let ages = [{ label: '1', value: '1' },]
+        for (let index = 2; index < 60; index++) {
+            ages = [...ages, { label: `${index}`, value: `${index}` }]
+        }
+        return ages
+    };
+    function toggleSwitch() {
+        if (langSwitch){
+            dispatch({ type: LANGUAGES_ACTION, payload: 'en' })
+        }else{
+            dispatch({ type: LANGUAGES_ACTION, payload: 'es' })
+        }
+        setLangSwitch(previousState => !previousState);
+    };
     function handleOnLogin() {
         onLogin()
-    }
+    };
     function onLogin() {
         dispatch({ type: LOGIN_ACTION, payload: true })
-
-    }
+    };
     function handleDisabledButton() {
         let emptyText = false
         let errorText = false
@@ -97,7 +110,7 @@ function Login() {
             errorText = errorText || signIn[key].error
         }
         return emptyText || errorText || !term
-    }
+    };
 
     return (
         <SafeAreaView style={styles.container}>
@@ -106,7 +119,7 @@ function Login() {
                 behavior={Platform.OS == 'ios' ? 'position' : 'height'}
                 style={styles.flexOne}
                 contentContainerStyle={styles.flexOne}
-                keyboardVerticalOffset={Platform.OS == 'ios' ? -50 : 20}>
+                keyboardVerticalOffset={Platform.OS == 'ios' ? -50 : 60}>
                 <View style={styles.viewContainerLogin}>
                     <Image
                         source={require('../Assets/General/wbooks_logo.png')}
@@ -131,10 +144,10 @@ function Login() {
                         }
                         <PickerCustom
                             value={age}
-                            setValue={setAge} 
+                            setValue={setAge}
                             placeholder={lang.t("placeholder.age", { locale: languages })}
                             label={age !== ''}
-                            items={ARRAY_AGES}/>
+                            items={returnArrayAges()} />
                         <View style={styles.viewCheckBox}>
                             <CheckBox
                                 value={term}
@@ -155,6 +168,17 @@ function Login() {
                             textButton={lang.t("button.login", { locale: languages })}
                             disabledCustom={handleDisabledButton()}
                         />
+                        <View style={styles.flexRow}>
+                            <Text style={styles.alignSelfCenter}> {lang.t("button.lang", { locale: languages })}</Text>
+                            <Switch
+                                trackColor={{ false: "#767577", true: "#81b0ff" }}
+                                thumbColor={langSwitch ? "#f5dd4b" : "#f4f3f4"}
+                                ios_backgroundColor="#3e3e3e"
+                                onValueChange={toggleSwitch}
+                                value={langSwitch}
+                            />
+                        </View>
+
                     </View>
                 </View>
             </KeyboardAvoidingView>

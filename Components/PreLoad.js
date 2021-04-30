@@ -5,7 +5,7 @@ import {
     Image,
     StatusBar
 } from 'react-native';
-import { styles } from '../Constant/styles'
+import { styles } from '../Constant/styles';
 
 
 function PreLoad() {
