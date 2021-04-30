@@ -14,6 +14,7 @@ import { LOGIN_ACTION } from '../Constant/actionType';
 import { onlyLetter, emailValidation } from '../Constant/regex';
 import lang from '../Lang/translations';
 import { styles, colors } from '../Constant/styles';
+import {ARRAY_AGES} from '../Constant/data';
 import {
     TextInputCustom,
     ButtonCustom,
@@ -41,7 +42,7 @@ function Login() {
             regex: emailValidation,
         }
     })
-    const [age, setAge] = useState('')
+    const [age, setAge] = useState('18')
     const [term, setTerm] = useState(false)
     const session_active = storeContext.state.session_active;
     const dispatch = storeContext.dispatch
@@ -105,7 +106,7 @@ function Login() {
                 behavior={Platform.OS == 'ios' ? 'position' : 'height'}
                 style={styles.flexOne}
                 contentContainerStyle={styles.flexOne}
-                keyboardVerticalOffset={Platform.OS == 'ios' ? -100 : 20}>
+                keyboardVerticalOffset={Platform.OS == 'ios' ? -50 : 20}>
                 <View style={styles.viewContainerLogin}>
                     <Image
                         source={require('../Assets/General/wbooks_logo.png')}
@@ -132,7 +133,8 @@ function Login() {
                             value={age}
                             setValue={setAge} 
                             placeholder={lang.t("placeholder.age", { locale: languages })}
-                            label={age !== ''}/>
+                            label={age !== ''}
+                            items={ARRAY_AGES}/>
                         <View style={styles.viewCheckBox}>
                             <CheckBox
                                 value={term}

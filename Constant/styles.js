@@ -12,13 +12,16 @@ export const colors = {
     brownLight: "#664533",
     brownDisable: '#a78d7f',
     gray: "#8b8d8d",
-    grayLight: "#e6e6e6"
+    grayLight: "#e6e6e6",
+    grayBack: '#0A0A0ACC',
+    shadow: '#000'
 }
 export const styles = StyleSheet.create({
     flexOne: { flex: 1 },
-    flexColumn: {
-        flexDirection: 'column'
-    },
+    alignSelfCenter: { alignSelf: 'center' },
+    alignSelfStretch:{alignSelf: 'stretch'},
+    flexColumn: { flexDirection: 'column' },
+    flexRow: { flexDirection: 'row' },
     container: {
         flex: 1,
         flexDirection: "column",
@@ -112,9 +115,32 @@ export const styles = StyleSheet.create({
         transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }],
         width: 20, height: 20
     },
-    textCheckBox:{
+    textCheckBox: {
         alignSelf: 'center',
-         marginLeft: 10
+        marginLeft: 10
+    },
+    modalContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+
+        backgroundColor: colors.grayBack
+    },
+    modalView: {
+        flex: 3,
+        backgroundColor: colors.white,
+        borderRadius: 5,
+        paddingVertical: 10,
+        shadowColor: colors.shadow,
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.3,
+        shadowRadius: 4,
+        elevation: 5,
+        maxHeight: 250,
+        alignSelf: 'stretch'
     }
 
 });
