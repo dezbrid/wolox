@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
     SafeAreaView,
     View,
@@ -19,7 +19,8 @@ import { styles, colors } from '../Constant/styles';
 import {
     TextInputCustom,
     ButtonCustom,
-    PickerCustom
+    PickerCustom,
+    ProgressFullView
 } from '../Components';
 import { apiCall } from '../Api';
 
@@ -47,14 +48,8 @@ function Login() {
     const [age, setAge] = useState('18');
     const [term, setTerm] = useState(false);
     const [langSwitch, setLangSwitch] = useState(false);
-    const session_active = storeContext.state.session_active;
+    const [isLoading, setIsloading] = useState(false);
     const dispatch = storeContext.dispatch;
-    /* useEffect(() => {
-         if (session_active) {
-             navigation.navigate("Main")
-         }
-     }, [session_active]);*/
-
 
     const configTextInput = [
         {
@@ -97,6 +92,7 @@ function Login() {
     };
 
     async function handleOnLogin() {
+        setIsloading(true)
         const dataToSend = {
             name: signIn.name.value,
             last_name: signIn.last_name.value,
@@ -109,10 +105,12 @@ function Login() {
             dispatch({ type: LOGIN_ACTION, payload: responseSignIn.data })
             const responseBooks = await apiCall(BOOKS, null, null, 'GET')
             dispatch({ type: BOOKS_ACTION, payload: responseBooks.data })
+            setIsloading(false)
             navigation.navigate("Main")
         } catch (error) {
-            
+            setIsloading(false)
         }
+        
     };
     function handleDisabledButton() {
         let emptyText = false
@@ -135,6 +133,7 @@ function Login() {
                 style={styles.flexOne}
                 contentContainerStyle={styles.flexOne}
                 keyboardVerticalOffset={Platform.OS == 'ios' ? -50 : 60}>
+                {isLoading && <ProgressFullView />}
                 <View style={styles.viewContainerLogin}>
                     <Image
                         source={require('../Assets/General/wbooks_logo.png')}

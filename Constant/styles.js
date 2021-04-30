@@ -11,7 +11,8 @@ export const colors = {
     gray: "#8b8d8d",
     grayLight: "#e6e6e6",
     grayBack: '#0A0A0ACC',
-    shadow: '#000'
+    shadow: '#000',
+
 }
 export const styles = StyleSheet.create({
     flexOne: { flex: 1 },
@@ -141,6 +142,16 @@ export const styles = StyleSheet.create({
     },
     switch: {
         transform: [{ scaleX: 0.6 }, { scaleY: 0.6 }]
+    },
+    progressViewContainer: {
+        flex: 1,
+        zIndex: 10,
+        position: 'absolute',
+        backgroundColor: colors.grayBack,
+        width: "100%",
+        height: "100%",
+        opacity: 0.7,
+        justifyContent: 'center'
     }
 
 });
