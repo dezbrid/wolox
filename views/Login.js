@@ -176,7 +176,7 @@ function Login() {
                                 thumbColor={langSwitch ? colors.blueDark : colors.grayBack}
                                 onValueChange={toggleSwitch}
                                 value={langSwitch}
-                                style={{transform:[{scaleX:0.6},{scaleY:0.6}]}}
+                                style={styles.switch}
                             />
                         </View>
 

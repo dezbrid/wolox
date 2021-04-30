@@ -16,7 +16,7 @@ export const colors = {
 export const styles = StyleSheet.create({
     flexOne: { flex: 1 },
     alignSelfCenter: { alignSelf: 'center' },
-    alignSelfStretch:{alignSelf: 'stretch'},
+    alignSelfStretch: { alignSelf: 'stretch' },
     flexColumn: { flexDirection: 'column' },
     flexRow: { flexDirection: 'row' },
     container: {
@@ -138,6 +138,9 @@ export const styles = StyleSheet.create({
         elevation: 5,
         maxHeight: 250,
         alignSelf: 'stretch'
+    },
+    switch: {
+        transform: [{ scaleX: 0.6 }, { scaleY: 0.6 }]
     }
 
 });
