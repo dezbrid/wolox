@@ -20,6 +20,7 @@ import {
     ButtonCustom,
     PickerCustom
 } from '../Components';
+import { color } from 'react-native-reanimated';
 
 function Login() {
     const navigation = useNavigation();
@@ -171,8 +172,8 @@ function Login() {
                         <View style={styles.flexRow}>
                             <Text style={styles.alignSelfCenter}> {lang.t("button.lang", { locale: languages })}</Text>
                             <Switch
-                                trackColor={{ false: "#767577", true: "#81b0ff" }}
-                                thumbColor={langSwitch ? "#f5dd4b" : "#f4f3f4"}
+                                trackColor={{true: colors.blue, false: colors.gray,  }}
+                                thumbColor={langSwitch ?  colors.blueDark:colors.grayBack  }
                                 ios_backgroundColor="#3e3e3e"
                                 onValueChange={toggleSwitch}
                                 value={langSwitch}
