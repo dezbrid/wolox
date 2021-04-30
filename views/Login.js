@@ -11,6 +11,7 @@ import {
 import CheckBox from '@react-native-community/checkbox';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
+import { SIGN_IN, BOOKS } from '../Constant/url';
 import { LOGIN_ACTION, LANGUAGES_ACTION } from '../Constant/actionType';
 import { onlyLetter, emailValidation } from '../Constant/regex';
 import lang from '../Lang/translations';
@@ -20,7 +21,7 @@ import {
     ButtonCustom,
     PickerCustom
 } from '../Components';
-import { color } from 'react-native-reanimated';
+import { apiCall } from '../Api';
 
 function Login() {
     const navigation = useNavigation();
@@ -94,11 +95,23 @@ function Login() {
         }
         setLangSwitch(previousState => !previousState);
     };
-    function handleOnLogin() {
-        onLogin()
-    };
-    function onLogin() {
-        dispatch({ type: LOGIN_ACTION, payload: true })
+
+    async function handleOnLogin() {
+        const dataToSend={
+            name:signIn.name.value,
+            last_name:signIn.last_name.value,
+            email:signIn.email.value,
+            age:age,
+            term:term
+        }
+        try {
+            const response = await apiCall(SIGN_IN,dataToSend,null,'POST');
+            console.log('response',response)
+        } catch (error) {
+            console.log('error',error)
+            console.log('error',error.response)
+        }
+        // dispatch({ type: LOGIN_ACTION, payload: true })
     };
     function handleDisabledButton() {
         let emptyText = false
