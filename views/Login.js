@@ -11,7 +11,7 @@ import {
 import CheckBox from '@react-native-community/checkbox';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
-import { LOGIN_ACTION ,LANGUAGES_ACTION} from '../Constant/actionType';
+import { LOGIN_ACTION, LANGUAGES_ACTION } from '../Constant/actionType';
 import { onlyLetter, emailValidation } from '../Constant/regex';
 import lang from '../Lang/translations';
 import { styles, colors } from '../Constant/styles';
@@ -87,9 +87,9 @@ function Login() {
         return ages
     };
     function toggleSwitch() {
-        if (langSwitch){
+        if (langSwitch) {
             dispatch({ type: LANGUAGES_ACTION, payload: 'en' })
-        }else{
+        } else {
             dispatch({ type: LANGUAGES_ACTION, payload: 'es' })
         }
         setLangSwitch(previousState => !previousState);
@@ -172,11 +172,11 @@ function Login() {
                         <View style={styles.flexRow}>
                             <Text style={styles.alignSelfCenter}> {lang.t("button.lang", { locale: languages })}</Text>
                             <Switch
-                                trackColor={{true: colors.blue, false: colors.gray,  }}
-                                thumbColor={langSwitch ?  colors.blueDark:colors.grayBack  }
-                                ios_backgroundColor="#3e3e3e"
+                                trackColor={{ true: colors.blue, false: colors.gray, }}
+                                thumbColor={langSwitch ? colors.blueDark : colors.grayBack}
                                 onValueChange={toggleSwitch}
                                 value={langSwitch}
+                                style={{transform:[{scaleX:0.6},{scaleY:0.6}]}}
                             />
                         </View>
 

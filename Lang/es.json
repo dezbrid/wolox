@@ -5,7 +5,7 @@
   "placeholder": {
     "name": "Nombre",
     "last_name": "Apellido",
-    "email": "Correo Electronico",
+    "email": "Correo",
     "age": "Edad"
   },
   "errorInput": {
