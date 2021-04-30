@@ -1,5 +1,25 @@
 {
-  "sign_in": [],
+  "sign_in": [
+    {
+      "id": 1
+    },
+    {
+      "name": "Daniek",
+      "last_name": "Ordóñez",
+      "email": "dez5@yopmail.com",
+      "age": "18",
+      "term": true,
+      "id": 2
+    },
+    {
+      "name": "Daniel",
+      "last_name": "Ordoñez",
+      "email": "dez@yopmail.com",
+      "age": "30",
+      "term": true,
+      "id": 3
+    }
+  ],
   "books": [
     {
       "id": 1,

@@ -1,6 +1,23 @@
 {
   "universal": {
     "close": "cerrar"
+  },
+  "placeholder": {
+    "name": "Nombre",
+    "last_name": "Apellido",
+    "email": "Correo",
+    "age": "Edad"
+  },
+  "errorInput": {
+    "invalid": "%{textInput} invalido",
+    "onlyLatters": ", solo use letras",
+    "onlyEmail": ", ejemplo@correo.com es un correo valido"
+  },
+  "button": {
+    "login": "Acceso",
+    "lang": "Español"
+  },
+  "login": {
+    "term": "Acepto terminos y condiciones"
   }
-  
 }
