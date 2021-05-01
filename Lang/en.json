@@ -19,6 +19,9 @@
   },
   "login":{
     "term":"Accept terms and conditions"
+  },
+  "alert":{
+    "welcome":"Welcome"
   }
 
 }
