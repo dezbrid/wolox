@@ -19,5 +19,8 @@
   },
   "login": {
     "term": "Acepto terminos y condiciones"
+  },
+  "alert":{
+    "welcome":"Bienvenido"
   }
 }

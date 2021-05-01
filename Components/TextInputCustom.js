@@ -81,6 +81,8 @@ function TextInputCustom(props) {
                     value={valueInput}
                     style={styles.flexOne}
                     onBlur={handleOnBlur}
+                    autoCorrect={false}
+                    autoCapitalize={'none'}
                 />
                 {/*icon && <IconCustom />*/}
 

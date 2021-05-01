@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 
 export const colors = {
     blue: "#0bb4e4",
+    blueLight:'#c3e2ff',
     blueDark: "#0087ae",
     blueOverlay: '#004d64',
     blueGray: '#202328',
@@ -12,6 +13,8 @@ export const colors = {
     grayLight: "#e6e6e6",
     grayBack: '#0A0A0ACC',
     shadow: '#000',
+    greeSuccess: '#14c11e',
+    redError: '#c11414'
 
 }
 export const styles = StyleSheet.create({
@@ -20,10 +23,18 @@ export const styles = StyleSheet.create({
     alignSelfStretch: { alignSelf: 'stretch' },
     flexColumn: { flexDirection: 'column' },
     flexRow: { flexDirection: 'row' },
+    textColorWhite: { color: colors.white },
+    success: { backgroundColor: colors.greeSuccess },
+    error: { backgroundColor: colors.redError },
+    opacityOn: { opacity: 1 },
+    opacityOff: { opacity: 0 },
+    buttonImagen: { padding: 12, },
     container: {
         flex: 1,
         flexDirection: "column",
     },
+    backgroundColorBlue: { backgroundColor: colors.blue },
+    backgroundColorBlueLight: { backgroundColor: colors.blueLight },
     imageBackground: {
         flex: 1,
         resizeMode: "cover",
@@ -35,10 +46,6 @@ export const styles = StyleSheet.create({
         resizeMode: "center",
         alignSelf: "center"
     },
-    viewContainerLogin: {
-        flex: 1,
-        backgroundColor: colors.blue
-    },
     viewTextInputLogin: {
         flex: 5,
         backgroundColor: colors.white,
@@ -48,12 +55,6 @@ export const styles = StyleSheet.create({
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         justifyContent: 'center'
-    },
-    opacityOn: {
-        opacity: 1
-    },
-    opacityOff: {
-        opacity: 0
     },
     labelTextInput: {
         fontSize: 8,
@@ -100,9 +101,7 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
 
     },
-    buttonImagen: {
-        padding: 12,
-    },
+    buttonImagen: { padding: 12, },
     viewCheckBox: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -152,6 +151,19 @@ export const styles = StyleSheet.create({
         height: "100%",
         opacity: 0.7,
         justifyContent: 'center'
-    }
+    },
+    alertInfoContainer: {
+        flex: 1,
+        zIndex: 15,
+        flexWrap: "wrap",
+        position: 'absolute',
+        bottom: 10,
+        right: 20,
+        borderRadius: 50,
+        paddingHorizontal: 30,
+        paddingVertical: 10,
+        justifyContent: 'center',
+    },
+
 
 });
