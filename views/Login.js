@@ -109,7 +109,7 @@ function Login() {
             dispatch({ type: BOOKS_ACTION, payload: responseBooks.data })
             dispatch({ type: ALERT_INFO_ACTION, payload: { open: true, text: lang.t("alert.welcome", { locale: languages }), type: 'success' } })
             dispatch({ type: LOGIN_ACTION, payload: responseSignIn.data })
-            //navigation.navigate("Main")
+            navigation.navigate("Main")
         } catch (error) {
             dispatch({ type: ALERT_INFO_ACTION, payload: { open: true, text: { error }, type: 'error' } })
             dispatch({ type: IS_LOADING_ACTION, payload: 'false' })
