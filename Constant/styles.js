@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
     iconsHeader:{marginHorizontal:20},
     width100: { width: '100%' },
     backgroundColorBlueLight: { backgroundColor: colors.blueLight },
-    viewContainer:{paddingTop:50},
+    viewContainer:{paddingTop:70},
     imageBackground: {
         flex: 1,
         resizeMode: "cover",
@@ -168,6 +168,21 @@ export const styles = StyleSheet.create({
         paddingVertical: 10,
         justifyContent: 'center',
     },
+    cardBookContainer:{
+        backgroundColor: 'white',
+        paddingVertical: 20,
+        marginVertical: 8,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 1,
+        shadowRadius: 5,
+        elevation: 4,
+        borderRadius: 5,
+        paddingHorizontal: 30,
+        flexDirection: 'row',
+    },
+    cardBookImagen:{ flex: 1, height: 100 },
+    cardBookView:{ flex: 3, flexDirection: 'column', marginLeft: 20 },
+    cardBookTitle:{ fontWeight: "bold", fontSize: 20 }
 
 
 });
