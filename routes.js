@@ -27,9 +27,9 @@ function TabLibrary() {
                 headerBackground: () =>
                     <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
                 headerTitleStyle: styles.headerTitle,
-                headerLeft:()=> <Image source={require('./Assets/NavigationBar/ic_notifications.png')} style={{marginLeft:20}} />,
+                headerLeft:()=> <Image source={require('./Assets/NavigationBar/ic_notifications.png')} style={styles.iconsHeader} />,
                 headerRight: () =>
-                    <Image source={require('./Assets/NavigationBar/ic_search.png')} style={{marginRight:20}} />,
+                    <Image source={require('./Assets/NavigationBar/ic_search.png')} style={styles.iconsHeader} />,
             }}
         >
             <Stack.Screen

@@ -35,6 +35,7 @@ export const styles = StyleSheet.create({
         flexDirection: "column",
     },
     backgroundColorBlue: { backgroundColor: colors.blue },
+    iconsHeader:{marginHorizontal:20},
     width100: { width: '100%' },
     backgroundColorBlueLight: { backgroundColor: colors.blueLight },
     imageBackground: {
