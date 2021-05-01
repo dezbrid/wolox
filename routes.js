@@ -12,6 +12,7 @@ import {
 } from './Views';
 import {
     Image,
+    View
 } from 'react-native';
 import { StoreContext } from './store';
 import { styles } from './Constant/styles';
@@ -27,15 +28,16 @@ function TabLibrary() {
                 headerBackground: () =>
                     <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
                 headerTitleStyle: styles.headerTitle,
-                headerLeft:()=> <Image source={require('./Assets/NavigationBar/ic_notifications.png')} style={styles.iconsHeader} />,
+                headerLeft: () => <Image source={require('./Assets/NavigationBar/ic_notifications.png')} style={styles.iconsHeader} />,
                 headerRight: () =>
                     <Image source={require('./Assets/NavigationBar/ic_search.png')} style={styles.iconsHeader} />,
+               
             }}
         >
             <Stack.Screen
                 name="Library"
                 component={Library}
-               
+
             />
 
         </Stack.Navigator >

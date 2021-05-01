@@ -182,7 +182,7 @@ export const styles = StyleSheet.create({
     },
     cardBookImagen:{ flex: 1, height: 100 },
     cardBookView:{ flex: 3, flexDirection: 'column', marginLeft: 20 },
-    cardBookTitle:{ fontWeight: "bold", fontSize: 20 }
+    cardBookTitle:{ fontWeight: "bold", fontSize: 19 }
 
 
 });
