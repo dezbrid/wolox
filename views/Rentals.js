@@ -1,16 +1,15 @@
 import React from 'react';
 import {
-    View,
     Text
 } from 'react-native';
-
+import { ViewContainer } from '../Components';
 
 function Rentals() {
 
     return (
-        <View>
+        <ViewContainer>
             <Text> Rentals</Text>
-        </View>
+        </ViewContainer>
     );
 }
 

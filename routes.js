@@ -11,9 +11,10 @@ import {
     Wishlist
 } from './Views';
 import {
-    Image
+    Image,
 } from 'react-native';
 import { StoreContext } from './store';
+import { styles } from './Constant/styles';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -23,12 +24,20 @@ function TabLibrary() {
         <Stack.Navigator
             headerMode="screen"
             screenOptions={{
+                headerBackground: () =>
+                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                headerTitleStyle: styles.headerTitle,
+                headerLeft:()=> <Image source={require('./Assets/NavigationBar/ic_notifications.png')} style={styles.iconsHeader} />,
+                headerRight: () =>
+                    <Image source={require('./Assets/NavigationBar/ic_search.png')} style={styles.iconsHeader} />,
             }}
         >
             <Stack.Screen
                 name="Library"
                 component={Library}
-                options={{ headerShown: true, headerBackTitle: false, headerTitle: 'LIBRARY' }} />
+               
+            />
+
         </Stack.Navigator >
     );
 }
@@ -37,12 +46,15 @@ function TabWishlist() {
         <Stack.Navigator
             headerMode="screen"
             screenOptions={{
+                headerBackground: () =>
+                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                headerTitleStyle: styles.headerTitle
             }}
         >
             <Stack.Screen
                 name="Wishlist"
                 component={Wishlist}
-                options={{ headerShown: true, headerBackTitle: false, headerTitle: 'WISHLIST' }} />
+            />
         </Stack.Navigator >
     );
 } function TabAddNew() {
@@ -50,12 +62,16 @@ function TabWishlist() {
         <Stack.Navigator
             headerMode="screen"
             screenOptions={{
+                headerBackground: () =>
+                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                headerTitleStyle: styles.headerTitle
             }}
         >
             <Stack.Screen
                 name="AddNew"
                 component={AddNew}
-                options={{ headerShown: true, headerBackTitle: false, headerTitle: 'ADD NEW' }} />
+                options={{ headerShown: true, title: 'ADD NEW' }}
+            />
         </Stack.Navigator >
     );
 }
@@ -64,12 +80,15 @@ function TabRentals() {
         <Stack.Navigator
             headerMode="screen"
             screenOptions={{
+                headerBackground: () =>
+                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                headerTitleStyle: styles.headerTitle
             }}
         >
             <Stack.Screen
                 name="Rentals"
                 component={Rentals}
-                options={{ headerShown: true, headerBackTitle: false, headerTitle: 'RENTALS' }} />
+            />
         </Stack.Navigator >
     );
 }
@@ -78,12 +97,15 @@ function TabSettings() {
         <Stack.Navigator
             headerMode="screen"
             screenOptions={{
+                headerBackground: () =>
+                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                headerTitleStyle: styles.headerTitle
             }}
         >
             <Stack.Screen
                 name="Settings"
                 component={Settings}
-                options={{ headerShown: true, headerBackTitle: false, headerTitle: 'SENTTINGS' }} />
+            />
         </Stack.Navigator >
     );
 }

@@ -1,16 +1,15 @@
 import React from 'react';
 import {
-    View,
     Text
 } from 'react-native';
-
+import { ViewContainer } from '../Components';
 
 function BookDetail() {
 
     return (
-        <View>
+        <ViewContainer>
             <Text> Book Detail</Text>
-        </View>
+        </ViewContainer>
     );
 }
 
