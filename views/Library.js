@@ -8,6 +8,7 @@ import lang from '../Lang/translations';
 import { StoreContext } from '../store';
 import { LANGUAGES_ACTION } from '../Constant/actionType';
 import { ViewContainer } from '../Components';
+import { styles } from '../Constant/styles';
 
 
 function Library() {
@@ -15,7 +16,7 @@ function Library() {
     const languages = storeContext.state.languages
 
     return (
-        <ViewContainer>
+        <ViewContainer styleView={styles.viewContainer} >
             <Text> Library</Text>
             <Text> {`${lang.t("errorInput.invalid", { textInput: lang.t("textInput.email", { locale: languages }), locale: languages })}${lang.t("errorInput.onlyEmail", { locale: languages })}`}</Text>
             <Button

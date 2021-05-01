@@ -133,7 +133,8 @@ function Login() {
     return (
         <ViewContainer
             enableKeyboardAvoidingView={true}
-            backgroundColorView={'backgroundColorBlue'} >
+            backgroundColorView={'backgroundColorBlue'}
+             >
             <Image
                 source={require('../Assets/General/wbooks_logo.png')}
                 style={styles.LogoCenter}

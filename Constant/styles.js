@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 export const colors = {
-    blue: "#0bb4e4",
-    blueLight: '#c3e2ff',
+    blue: "#04b2e3",
+    blueLight: '#dceeff',
     blueDark: "#0087ae",
     blueOverlay: '#004d64',
     blueGray: '#202328',
@@ -38,6 +38,7 @@ export const styles = StyleSheet.create({
     iconsHeader:{marginHorizontal:20},
     width100: { width: '100%' },
     backgroundColorBlueLight: { backgroundColor: colors.blueLight },
+    viewContainer:{paddingTop:50},
     imageBackground: {
         flex: 1,
         resizeMode: "cover",
