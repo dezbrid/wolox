@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 export const colors = {
     blue: "#0bb4e4",
-    blueLight:'#c3e2ff',
+    blueLight: '#c3e2ff',
     blueDark: "#0087ae",
     blueOverlay: '#004d64',
     blueGray: '#202328',
@@ -29,11 +29,13 @@ export const styles = StyleSheet.create({
     opacityOn: { opacity: 1 },
     opacityOff: { opacity: 0 },
     buttonImagen: { padding: 12, },
+    headerTitle: { textAlign: 'center', color: 'white' },
     container: {
         flex: 1,
         flexDirection: "column",
     },
     backgroundColorBlue: { backgroundColor: colors.blue },
+    width100: { width: '100%' },
     backgroundColorBlueLight: { backgroundColor: colors.blueLight },
     imageBackground: {
         flex: 1,
