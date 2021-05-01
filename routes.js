@@ -35,6 +35,7 @@ function TabLibrary() {
             <Stack.Screen
                 name="Library"
                 component={Library}
+               
             />
 
         </Stack.Navigator >
@@ -69,6 +70,7 @@ function TabWishlist() {
             <Stack.Screen
                 name="AddNew"
                 component={AddNew}
+                options={{ headerShown: true, title: 'ADD NEW' }}
             />
         </Stack.Navigator >
     );

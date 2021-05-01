@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     opacityOn: { opacity: 1 },
     opacityOff: { opacity: 0 },
     buttonImagen: { padding: 12, },
-    headerTitle: { textAlign: 'center', color: 'white' },
+    headerTitle: { textAlign: 'center', color: 'white',textTransform:'uppercase' },
     container: {
         flex: 1,
         flexDirection: "column",
