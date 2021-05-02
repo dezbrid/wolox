@@ -17,7 +17,7 @@ import {
     Text, TextInput
 } from 'react-native';
 import { StoreContext } from './store';
-import { styles } from './Constant/styles';
+import { styles,colors } from './Constant/styles';
 import lang from './Lang/translations';
 import { SEARCH_BAR_ACTION } from './Constant/actionType';
 
@@ -246,19 +246,25 @@ function StackNavigator() {
     const storeContext = useContext(StoreContext);
     const session_active = storeContext.state.session_active;
     const languages = storeContext.state.languages;
+   
     return (
         <Stack.Navigator
             initialRouteName={"Login"}
             headerMode="screen"
             screenOptions={{
-
+                headerBackground: () => <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                headerTintColor:colors.white ,
+                headerTitleAlign:'center'
+              
             }}
         >
             {
                 session_active ?
                     <>
                         <Stack.Screen name="Main" component={TabNavigator} options={{ headerShown: false }} />
-                        <Stack.Screen name="BookDetail" component={BookDetail} options={{ headerShown: true, title: lang.t("titleTab.bookDetail", { locale: languages }) }} />
+                        <Stack.Screen name="BookDetail" component={BookDetail} options={{
+                            headerShown: true, title: lang.t("titleTab.bookDetail", { locale: languages })
+                        }} />
                     </> :
                     <>
                         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />

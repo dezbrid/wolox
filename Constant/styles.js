@@ -103,6 +103,7 @@ export const styles = StyleSheet.create({
         fontSize: 13,
         color: colors.white,
         textAlign: 'center',
+        fontWeight:'bold'
 
     },
     buttonImagen: { padding: 12, },
@@ -195,6 +196,9 @@ export const styles = StyleSheet.create({
     searchBarImagen:{
         height: 15, 
         width: 15
+    },
+    paddingHorizontal:{
+        paddingHorizontal:20
     }
 
 

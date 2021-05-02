@@ -16,7 +16,9 @@
   },
   "button":{
     "login":"Login",
-    "lang":"English"
+    "lang":"English",
+    "rent": "RENT",
+    "addWish":"ADD TO WISHLIST"
   },
   "login":{
     "term":"Accept terms and conditions"

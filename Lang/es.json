@@ -16,7 +16,9 @@
   },
   "button": {
     "login": "Acceso",
-    "lang": "Español"
+    "lang": "Español",
+    "rent": "RENTAR",
+    "addWish":"AGREGAR A LISTA DE DESEOS"
   },
   "login": {
     "term": "Acepto terminos y condiciones"
