@@ -4,6 +4,7 @@ import {
     Text,
     View,
     Image,
+    TouchableNativeFeedback
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
@@ -24,27 +25,40 @@ function Library() {
     useEffect(() => {
         setArrayBooks(booksFilter)
     }, [booksFilter])
-    
+    useEffect(() => {
+        const prueba = async () => {
+            setTimeout(() => {
+                console.log('prueba')
+            }, 1000);
+        }
+        prueba()
+    }, [booksFilter])
+
     useFocusEffect(
         useCallback(() => {
             return () => {
                 setArrayBooks(books)
                 dispatch({ type: SEARCH_BAR_ACTION, payload: { open: false, text: '' } })
             }
-        }, [navigation])
+        }, [])
     );
-    
+    function handleOpenBookDetail(item) {
+        navigation.navigate("BookDetail",{item})
+        
+    }
+
     function cardBook({ item }) {
         return (
-            <View style={styles.cardBookContainer}>
-                <Image source={{ uri: item.image_url }} style={styles.cardBookImagen} resizeMode='contain' />
-                <View style={styles.cardBookView}>
-                    <Text style={styles.cardBookTitle} >{item.title}</Text>
-                    <Text >{item.author}</Text>
+            <TouchableNativeFeedback onPress={()=>handleOpenBookDetail(item)}>
+                <View style={styles.cardBookContainer}>
+                    <Image source={item.image_url?{ uri: item.image_url }:require('../Assets/General/img_book_placeholder.png')} style={styles.cardBookImagen} resizeMode='contain' />
+                    <View style={styles.cardBookView}>
+                        <Text style={styles.cardBookTitle} >{item.title}</Text>
+                        <Text >{item.author}</Text>
+                    </View>
+
                 </View>
-
-            </View>
-
+            </TouchableNativeFeedback>
         )
     }
     return (
