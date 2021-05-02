@@ -70,7 +70,7 @@ function TabLibrary() {
             }}
         >
             <Stack.Screen
-                name="Library"
+                name={lang.t("titleTab.library", { locale: languages })}
                 component={Library}
 
             />
@@ -79,6 +79,8 @@ function TabLibrary() {
     );
 }
 function TabWishlist() {
+    const storeContext = useContext(StoreContext);
+    const languages = storeContext.state.languages;
     return (
         <Stack.Navigator
             headerMode="screen"
@@ -89,12 +91,14 @@ function TabWishlist() {
             }}
         >
             <Stack.Screen
-                name="Wishlist"
+                 name={lang.t("titleTab.wishlist", { locale: languages })}
                 component={Wishlist}
             />
         </Stack.Navigator >
     );
 } function TabAddNew() {
+    const storeContext = useContext(StoreContext);
+    const languages = storeContext.state.languages;
     return (
         <Stack.Navigator
             headerMode="screen"
@@ -105,13 +109,15 @@ function TabWishlist() {
             }}
         >
             <Stack.Screen
-                name="Add New"
+               name={lang.t("titleTab.addNew", { locale: languages })}
                 component={AddNew}
             />
         </Stack.Navigator >
     );
 }
 function TabRentals() {
+    const storeContext = useContext(StoreContext);
+    const languages = storeContext.state.languages;
     return (
         <Stack.Navigator
             headerMode="screen"
@@ -122,13 +128,15 @@ function TabRentals() {
             }}
         >
             <Stack.Screen
-                name="Rentals"
+               name={lang.t("titleTab.rentals", { locale: languages })}
                 component={Rentals}
             />
         </Stack.Navigator >
     );
 }
 function TabSettings() {
+    const storeContext = useContext(StoreContext);
+    const languages = storeContext.state.languages;
     return (
         <Stack.Navigator
             headerMode="screen"
@@ -139,7 +147,7 @@ function TabSettings() {
             }}
         >
             <Stack.Screen
-                name="Settings"
+                name={lang.t("titleTab.settings", { locale: languages })}
                 component={Settings}
             />
         </Stack.Navigator >
@@ -147,7 +155,8 @@ function TabSettings() {
 }
 
 function TabNavigator() {
-
+    const storeContext = useContext(StoreContext);
+    const languages = storeContext.state.languages;
     return (
         <Tab.Navigator
             initialRouteName="Library"
@@ -159,7 +168,7 @@ function TabNavigator() {
                 name="Library"
                 component={TabLibrary}
                 options={{
-                    tabBarLabel: 'LIBRARY',
+                    tabBarLabel: lang.t("titleTab.library", { locale: languages }),
                     tabBarIcon: ({ focused, color, size }) => {
                         let icon = focused ?
                             require('./Assets/ToolBar/ic_library_active.png') :
@@ -171,7 +180,7 @@ function TabNavigator() {
                 name="Wishlist"
                 component={TabWishlist}
                 options={{
-                    tabBarLabel: 'WISHLIST',
+                    tabBarLabel: lang.t("titleTab.wishlist", { locale: languages }),
                     tabBarIcon: ({ focused, color, size }) => {
                         let icon = focused ?
                             require('./Assets/ToolBar/ic_wishlist_active.png') :
@@ -183,7 +192,7 @@ function TabNavigator() {
                 name="AddNew"
                 component={TabAddNew}
                 options={{
-                    tabBarLabel: 'ADD NEW',
+                    tabBarLabel: lang.t("titleTab.addNew", { locale: languages }),
                     tabBarIcon: ({ focused, color, size }) => {
                         let icon = focused ?
                             require('./Assets/ToolBar/ic_add_new_active.png') :
@@ -195,7 +204,7 @@ function TabNavigator() {
                 name="Rentals"
                 component={TabRentals}
                 options={{
-                    tabBarLabel: 'RENTALS',
+                    tabBarLabel: lang.t("titleTab.rentals", { locale: languages }),
                     tabBarIcon: ({ focused, color, size }) => {
                         let icon = focused ?
                             require('./Assets/ToolBar/ic_myrentals_active.png') :
@@ -207,7 +216,7 @@ function TabNavigator() {
                 name="Settings"
                 component={TabSettings}
                 options={{
-                    tabBarLabel: 'SETTINGS',
+                    tabBarLabel: lang.t("titleTab.settings", { locale: languages }),
                     tabBarIcon: ({ focused, color, size }) => {
                         let icon = focused ?
                             require('./Assets/ToolBar/ic_settings_active.png') :
@@ -222,6 +231,7 @@ function TabNavigator() {
 function StackNavigator() {
     const storeContext = useContext(StoreContext);
     const session_active = storeContext.state.session_active;
+    const languages = storeContext.state.languages;
     return (
         <Stack.Navigator
             initialRouteName={"Login"}
@@ -234,7 +244,7 @@ function StackNavigator() {
                 session_active ?
                     <>
                         <Stack.Screen name="Main" component={TabNavigator} options={{ headerShown: false }} />
-                        <Stack.Screen name="BookDetail" component={BookDetail} options={{ headerShown: true, title: 'BOOK DETAIL' }} />
+                        <Stack.Screen name="BookDetail" component={BookDetail} options={{ headerShown: true, title: lang.t("titleTab.bookDetail", { locale: languages }) }} />
                     </> :
                     <>
                         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
