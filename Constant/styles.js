@@ -29,16 +29,16 @@ export const styles = StyleSheet.create({
     opacityOn: { opacity: 1 },
     opacityOff: { opacity: 0 },
     buttonImagen: { padding: 12, },
-    headerTitle: { textAlign: 'center', color: 'white',textTransform:'uppercase' },
+    headerTitle: { textAlign: 'center', color: 'white', textTransform: 'uppercase' },
     container: {
         flex: 1,
         flexDirection: "column",
     },
     backgroundColorBlue: { backgroundColor: colors.blue },
-    iconsHeader:{marginHorizontal:20},
+    iconsHeader: { marginHorizontal: 20 },
     width100: { width: '100%' },
     backgroundColorBlueLight: { backgroundColor: colors.blueLight },
-    viewContainer:{paddingTop:70},
+    viewContainer: { paddingTop: 70 },
     imageBackground: {
         flex: 1,
         resizeMode: "cover",
@@ -168,21 +168,34 @@ export const styles = StyleSheet.create({
         paddingVertical: 10,
         justifyContent: 'center',
     },
-    cardBookContainer:{
+    cardBookContainer: {
         backgroundColor: 'white',
         paddingVertical: 20,
         marginVertical: 8,
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 1,
-        shadowRadius: 5,
+        shadowRadius: 20,
         elevation: 4,
         borderRadius: 5,
         paddingHorizontal: 30,
         flexDirection: 'row',
     },
-    cardBookImagen:{ flex: 1, height: 100 },
-    cardBookView:{ flex: 3, flexDirection: 'column', marginLeft: 20 },
-    cardBookTitle:{ fontWeight: "bold", fontSize: 19 }
+    cardBookImagen: { flex: 1, height: 100 },
+    cardBookView: { flex: 3, flexDirection: 'column', marginLeft: 20 },
+    cardBookTitle: { fontWeight: "bold", fontSize: 19 },
+    searchBarView: {
+        backgroundColor: 'white',
+        flex: 1,
+        alignItems: 'center',
+        flexDirection: 'row',
+        paddingHorizontal: 10,
+        height: 40,
+        borderRadius: 10,
+    },
+    searchBarImagen:{
+        height: 15, 
+        width: 15
+    }
 
 
 });

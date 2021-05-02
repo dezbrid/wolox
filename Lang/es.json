@@ -6,7 +6,8 @@
     "name": "Nombre",
     "last_name": "Apellido",
     "email": "Correo",
-    "age": "Edad"
+    "age": "Edad",
+    "search":"Buscar..."
   },
   "errorInput": {
     "invalid": "%{textInput} invalido",

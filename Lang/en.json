@@ -6,7 +6,8 @@
     "name": "Name",
     "last_name": "Last Name",
     "email": "Email",
-    "age":"Age"
+    "age":"Age",
+    "search":"Search..."
   },
   "errorInput":{
     "invalid":"Invalid %{textInput}",
