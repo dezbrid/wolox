@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useCallback,useMemo } from 'react';
+import React, { useContext, useState, useEffect, useCallback, useMemo } from 'react';
 import {
     FlatList,
     Text,
@@ -26,11 +26,26 @@ function Library() {
 
     useEffect(() => {
         navigation.setOptions({
-            headerRight: () =>
-                <TouchableOpacity onPress={searchBar ? handleCloseSearchBar : handleOpenSearchBar}>
-                    <Image source={require('../Assets/NavigationBar/ic_search.png')} style={styles.iconsHeader} />
-                </TouchableOpacity>,
-            headerTitle: searchBar ? () =>
+            headerRight: headerRightComponent,
+            headerTitle: headerTitleComponent,
+        });
+
+    }, [searchBar, searchInput, languages]);
+    useFocusEffect(
+        useCallback(() => {
+            return () => handleCloseSearchBar()
+        }, [navigation])
+    );
+    function headerRightComponent() {
+        return (
+            <TouchableOpacity onPress={toggleButtonSearch}>
+                <Image source={require('../Assets/NavigationBar/ic_search.png')} style={styles.iconsHeader} />
+            </TouchableOpacity>
+        )
+    }
+    function headerTitleComponent(props) {
+        if (searchBar) {
+            return (
                 <View style={styles.searchBarView} >
                     <Image source={require('../Assets/General/ic_search_placeholder.png')} style={styles.searchBarImagen} />
                     <TextInput
@@ -40,27 +55,29 @@ function Library() {
                         autoCorrect={false}
                         autoCapitalize='none'
                     />
-                </View> : (props) => <Text style={[styles.headerTitle, styles.cardBookTitle]}>{props.children}</Text>,
+                </View>
+            )
+        }
+        return (
+            <Text style={[styles.headerTitle, styles.cardBookTitle]}>{props.children}</Text>
+        )
 
 
-        });
-
-    }, [searchBar, searchInput, languages]);
-    useFocusEffect(
-        useCallback(() => {
-            return () => handleCloseSearchBar()
-        }, [navigation])
-    );
+    }
     function handleCloseSearchBar() {
         setSearchBar(false)
         setSearchInput('')
         setArrayBooks(books)
     }
-    function handleOpenSearchBar() {
-        setSearchBar(true)
+    function toggleButtonSearch() {
+        if (searchBar) {
+            handleCloseSearchBar()
+        } else {
+            setSearchBar(true)
+        }
+
     }
     function handleOnChangesText(newText) {
-        console.log('handleOnChangesText', newText)
         const filterArrayBooks = books.filter((bookObj) => filterBooks(bookObj, newText))
         setArrayBooks(filterArrayBooks)
         setSearchInput(newText)
