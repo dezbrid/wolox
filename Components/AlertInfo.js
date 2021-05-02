@@ -14,10 +14,16 @@ function AlertInfo(props) {
     const { textInfo, type } = props
     const storeContext = useContext(StoreContext);
     const dispatch = storeContext.dispatch;
+    useEffect(() => {
+        setTimeout(() => {
+            handleClose()
+        }, 1000);
+
+    }, [])
     function handleClose() {
         dispatch({ type: ALERT_INFO_ACTION, payload: { open: false, text: '', type: 'success' } })
     }
-    
+
     return (
         <View style={[styles.alertInfoContainer, styles[type]]}>
             <TouchableNativeFeedback onPress={handleClose}>

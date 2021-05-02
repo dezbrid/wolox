@@ -6,7 +6,8 @@
     "name": "Name",
     "last_name": "Last Name",
     "email": "Email",
-    "age":"Age"
+    "age":"Age",
+    "search":"Search..."
   },
   "errorInput":{
     "invalid":"Invalid %{textInput}",
@@ -22,6 +23,14 @@
   },
   "alert":{
     "welcome":"Welcome"
+  },
+  "titleTab":{
+    "library":"LIBRARY",
+    "wishlist":"WISHLIST",
+    "addNew":"ADD NEW",
+    "rentals":"RENTALS",
+    "settings":"SETTINGS",
+    "bookDetail":"BOOK DETAIL"
   }
 
 }

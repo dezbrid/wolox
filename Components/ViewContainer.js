@@ -13,7 +13,7 @@ import AlertInfo from './AlertInfo';
 
 
 function ViewContainer(props) {
-    const { enableKeyboardAvoidingView, children, backgroundColorView } = props
+    const { enableKeyboardAvoidingView, children, backgroundColorView,styleView } = props
     const storeContext = useContext(StoreContext);
     const is_Loading = storeContext.state.is_loading;
     const alert_Info = storeContext.state.alert_Info;
@@ -29,7 +29,7 @@ function ViewContainer(props) {
                 keyboardVerticalOffset={Platform.OS == 'ios' ? -50 : 60}>
                 {is_Loading && <ProgressFullView />}
                 {alert_Info.open && <AlertInfo textInfo={alert_Info.text} type={alert_Info.type} />}
-                <View style={[styles.flexOne, styles[backgroundColorView]]}>
+                <View style={[styles.flexOne, styles[backgroundColorView],styleView]}>
                     {children}
                 </View>
             </KeyboardAvoidingView>
@@ -39,10 +39,12 @@ function ViewContainer(props) {
 ViewContainer.propTypes = {
     enableKeyboardAvoidingView: PropTypes.bool,
     children: PropTypes.node.isRequired,
-    backgroundColorView: PropTypes.string
+    backgroundColorView: PropTypes.string,
+    styleView:PropTypes.object
 }
 ViewContainer.defaultProps = {
     enableKeyboardAvoidingView: false,
-    backgroundColorView: 'backgroundColorBlueLight'
+    backgroundColorView: 'backgroundColorBlueLight',
+    styleView:{}
 }
 export default ViewContainer

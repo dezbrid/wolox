@@ -7,11 +7,12 @@ import {
 import { StoreContext } from '../store';
 import { LOGOUT_ACTION } from '../Constant/actionType';
 import { ViewContainer } from '../Components';
+import { styles } from '../Constant/styles';
 
 function Settings() {
     const storeContext = useContext(StoreContext)
     return (
-        <ViewContainer>
+        <ViewContainer styleView={styles.viewContainer}>
             <Text> Settings</Text>
             <Button
                 onPress={() => {

@@ -6,7 +6,8 @@
     "name": "Nombre",
     "last_name": "Apellido",
     "email": "Correo",
-    "age": "Edad"
+    "age": "Edad",
+    "search":"Buscar..."
   },
   "errorInput": {
     "invalid": "%{textInput} invalido",
@@ -22,5 +23,13 @@
   },
   "alert":{
     "welcome":"Bienvenido"
+  },
+  "titleTab":{
+    "library":"LIBRERIA",
+    "wishlist":"LISTA DE DESEOS",
+    "addNew":"AGREGAR NUEVO",
+    "rentals":"RENTAS",
+    "settings":"CONFIGURACION",
+    "bookDetail":"DETALLES DEL LIBRO"
   }
 }

@@ -1,24 +1,6 @@
 {
   "sign_in": [
-    {
-      "id": 1
-    },
-    {
-      "name": "Daniek",
-      "last_name": "Ordóñez",
-      "email": "dez5@yopmail.com",
-      "age": "18",
-      "term": true,
-      "id": 2
-    },
-    {
-      "name": "Daniel",
-      "last_name": "Ordoñez",
-      "email": "dez@yopmail.com",
-      "age": "30",
-      "term": true,
-      "id": 3
-    }
+
   ],
   "books": [
     {
@@ -69,7 +51,7 @@
     {
       "id": 6,
       "author": "Paula Hawkins",
-      "title": "The Girl on the Train\n",
+      "title": "The Girl on the Train",
       "genre": "suspense",
       "publisher": "Riverhead Books",
       "year": "2015",
