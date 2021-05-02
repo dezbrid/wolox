@@ -24,19 +24,19 @@ function Library() {
     const [searchBar, setSearchBar] = useState(false);
     const [searchInput, setSearchInput] = useState('')
 
-    useEffect(() => {
+   /* useEffect(() => {
         navigation.setOptions({
             headerRight: headerRightComponent,
             headerTitle: headerTitleComponent,
         });
 
-    }, [searchBar, searchInput, languages]);
+    }, [searchBar, searchInput, languages]);*/
     useFocusEffect(
         useCallback(() => {
             return () => handleCloseSearchBar()
         }, [navigation])
     );
-    function headerRightComponent() {
+    /*function headerRightComponent() {
         return (
             <TouchableOpacity onPress={toggleButtonSearch}>
                 <Image source={require('../Assets/NavigationBar/ic_search.png')} style={styles.iconsHeader} />
@@ -63,7 +63,7 @@ function Library() {
         )
 
 
-    }
+    }*/
     function handleCloseSearchBar() {
         setSearchBar(false)
         setSearchInput('')

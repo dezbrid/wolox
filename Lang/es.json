@@ -23,5 +23,12 @@
   },
   "alert":{
     "welcome":"Bienvenido"
+  },
+  "titleTab":{
+    "library":"LIBRERIA",
+    "wishlist":"LISTA DE DESEOS",
+    "addNew":"AGREGAR NUEVO",
+    "rentals":"RENTAS",
+    "bookDetail":"DETALLES DEL LIBRO"
   }
 }

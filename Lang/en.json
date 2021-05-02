@@ -23,6 +23,13 @@
   },
   "alert":{
     "welcome":"Welcome"
+  },
+  "titleTab":{
+    "library":"LIBRARY",
+    "wishlist":"WISHLIST",
+    "addNew":"ADD NEW",
+    "rentals":"RENTALS",
+    "bookDetail":"BOOK DETAIL"
   }
 
 }

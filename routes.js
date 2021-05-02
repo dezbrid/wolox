@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -12,15 +12,50 @@ import {
 } from './Views';
 import {
     Image,
-    View
+    View,
+    TouchableOpacity,
+    Text, TextInput
 } from 'react-native';
 import { StoreContext } from './store';
 import { styles } from './Constant/styles';
+import lang from './Lang/translations';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function TabLibrary() {
+    const [searchBar, setSearchBar] = useState(false);
+    const [searchInput, setSearchInput] = useState('')
+    const storeContext = useContext(StoreContext);
+    const languages = storeContext.state.languages;
+    function headerRightComponent() {
+        return (
+            <TouchableOpacity onPress={() => setSearchBar(prev => !prev)}>
+                <Image source={require('./Assets/NavigationBar/ic_search.png')} style={styles.iconsHeader} />
+            </TouchableOpacity>
+        )
+    }
+    function headerTitleComponent(props) {
+        if (searchBar) {
+            return (
+                <View style={styles.searchBarView} >
+                    <Image source={require('./Assets/General/ic_search_placeholder.png')} style={styles.searchBarImagen} />
+                    <TextInput
+                        value={searchInput}
+                        onChangeText={(text) => setSearchInput(text)}
+                        placeholder={lang.t("placeholder.search", { locale: languages })}
+                        autoCorrect={false}
+                        autoCapitalize='none'
+                    />
+                </View>
+            )
+        }
+        return (
+            <Text style={[styles.headerTitle, styles.cardBookTitle]}>{props.children}</Text>
+        )
+
+
+    }
     return (
         <Stack.Navigator
             headerMode="screen"
@@ -29,9 +64,9 @@ function TabLibrary() {
                     <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
                 headerTitleStyle: styles.headerTitle,
                 headerLeft: () => <Image source={require('./Assets/NavigationBar/ic_notifications.png')} style={styles.iconsHeader} />,
-                headerRight: () =>
-                    <Image source={require('./Assets/NavigationBar/ic_search.png')} style={styles.iconsHeader} />,
-               
+                headerRight: headerRightComponent,
+                headerTitle: headerTitleComponent,
+
             }}
         >
             <Stack.Screen
@@ -70,9 +105,8 @@ function TabWishlist() {
             }}
         >
             <Stack.Screen
-                name="AddNew"
+                name="Add New"
                 component={AddNew}
-                options={{ headerShown: true, title: 'ADD NEW' }}
             />
         </Stack.Navigator >
     );
