@@ -19,33 +19,47 @@ import {
 import { StoreContext } from './store';
 import { styles } from './Constant/styles';
 import lang from './Lang/translations';
+import { SEARCH_BAR_ACTION } from './Constant/actionType';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function TabLibrary() {
-    const [searchBar, setSearchBar] = useState(false);
-    const [searchInput, setSearchInput] = useState('')
+    //const [searchBar, setSearchBar] = useState(false);
+    //const [searchInput, setSearchInput] = useState('')
     const storeContext = useContext(StoreContext);
+    const dispatch = storeContext.dispatch;
     const languages = storeContext.state.languages;
+    const searchBar = storeContext.state.searchBar;
+    function handleOpenSearch() {
+        if (searchBar.open) {
+            dispatch({ type: SEARCH_BAR_ACTION, payload: { open: false, text: '' } })
+        } else {
+            dispatch({ type: SEARCH_BAR_ACTION, payload: { open: true } })
+        }
+    }
+    function handleOnChangeText(text) {
+        dispatch({ type: SEARCH_BAR_ACTION, payload: { text: text } })
+    }
     function headerRightComponent() {
         return (
-            <TouchableOpacity onPress={() => setSearchBar(prev => !prev)}>
+            <TouchableOpacity onPress={handleOpenSearch}>
                 <Image source={require('./Assets/NavigationBar/ic_search.png')} style={styles.iconsHeader} />
             </TouchableOpacity>
         )
     }
     function headerTitleComponent(props) {
-        if (searchBar) {
+        if (searchBar.open) {
             return (
                 <View style={styles.searchBarView} >
                     <Image source={require('./Assets/General/ic_search_placeholder.png')} style={styles.searchBarImagen} />
                     <TextInput
-                        value={searchInput}
-                        onChangeText={(text) => setSearchInput(text)}
+                        value={searchBar.text}
+                        onChangeText={handleOnChangeText}
                         placeholder={lang.t("placeholder.search", { locale: languages })}
                         autoCorrect={false}
                         autoCapitalize='none'
+                        style={styles.flexOne}
                     />
                 </View>
             )
@@ -91,7 +105,7 @@ function TabWishlist() {
             }}
         >
             <Stack.Screen
-                 name={lang.t("titleTab.wishlist", { locale: languages })}
+                name={lang.t("titleTab.wishlist", { locale: languages })}
                 component={Wishlist}
             />
         </Stack.Navigator >
@@ -109,7 +123,7 @@ function TabWishlist() {
             }}
         >
             <Stack.Screen
-               name={lang.t("titleTab.addNew", { locale: languages })}
+                name={lang.t("titleTab.addNew", { locale: languages })}
                 component={AddNew}
             />
         </Stack.Navigator >
@@ -128,7 +142,7 @@ function TabRentals() {
             }}
         >
             <Stack.Screen
-               name={lang.t("titleTab.rentals", { locale: languages })}
+                name={lang.t("titleTab.rentals", { locale: languages })}
                 component={Rentals}
             />
         </Stack.Navigator >

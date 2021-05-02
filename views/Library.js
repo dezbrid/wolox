@@ -12,28 +12,37 @@ import { StoreContext } from '../store';
 import { ViewContainer } from '../Components';
 import { styles } from '../Constant/styles';
 import { useFocusEffect } from '@react-navigation/native';
+import { SEARCH_BAR_ACTION } from '../Constant/actionType';
 import lang from '../Lang/translations';
 
 
 function Library() {
     const storeContext = useContext(StoreContext)
+    const dispatch = storeContext.dispatch;
     const navigation = useNavigation();
-    const languages = storeContext.state.languages;
+    // const languages = storeContext.state.languages;
     const books = storeContext.state.books;
+    const booksFilter = storeContext.state.booksFilter;
     const [arrayBooks, setArrayBooks] = useState(books);
-    const [searchBar, setSearchBar] = useState(false);
+    useEffect(() => {
+        setArrayBooks(booksFilter)
+    }, [booksFilter])
+    /*const [searchBar, setSearchBar] = useState(false);
     const [searchInput, setSearchInput] = useState('')
 
-   /* useEffect(() => {
-        navigation.setOptions({
-            headerRight: headerRightComponent,
-            headerTitle: headerTitleComponent,
-        });
-
-    }, [searchBar, searchInput, languages]);*/
+    /* useEffect(() => {
+         navigation.setOptions({
+             headerRight: headerRightComponent,
+             headerTitle: headerTitleComponent,
+         });
+ 
+     }, [searchBar, searchInput, languages]);*/
     useFocusEffect(
         useCallback(() => {
-            return () => handleCloseSearchBar()
+            return () => {
+                setArrayBooks(books)
+                dispatch({ type: SEARCH_BAR_ACTION, payload: { open: false, text: '' } })
+            }
         }, [navigation])
     );
     /*function headerRightComponent() {
@@ -63,13 +72,13 @@ function Library() {
         )
 
 
-    }*/
+    }
     function handleCloseSearchBar() {
         setSearchBar(false)
         setSearchInput('')
         setArrayBooks(books)
     }
-    function toggleButtonSearch() {
+   function toggleButtonSearch() {
         if (searchBar) {
             handleCloseSearchBar()
         } else {
@@ -85,7 +94,7 @@ function Library() {
     function filterBooks(obj, value) {
         return obj.title.includes(value)
 
-    }
+    }*/
     function cardBook({ item }) {
         return (
             <View style={styles.cardBookContainer}>
