@@ -7,7 +7,7 @@
     "last_name": "Apellido",
     "email": "Correo",
     "age": "Edad",
-    "search":"Buscar...",
+    "search": "Buscar...",
     "suggestion": "Sugeridos para ti"
   },
   "errorInput": {
@@ -16,23 +16,24 @@
     "onlyEmail": ", ejemplo@correo.com es un correo valido"
   },
   "button": {
-    "login": "Acceso",
+    "login": "ACCESO",
     "lang": "Español",
     "rent": "RENTAR",
-    "addWish":"AGREGAR A LISTA DE DESEOS"
+    "addWish": "AGREGAR A LISTA DE DESEOS",
+    "logout": "CERRAR SECCION"
   },
   "login": {
     "term": "Acepto terminos y condiciones"
   },
-  "alert":{
-    "welcome":"Bienvenido"
+  "alert": {
+    "welcome": "Bienvenido"
   },
-  "titleTab":{
-    "library":"LIBRERIA",
-    "wishlist":"LISTA DE DESEOS",
-    "addNew":"AGREGAR NUEVO",
-    "rentals":"RENTAS",
-    "settings":"CONFIGURACION",
-    "bookDetail":"DETALLES DEL LIBRO"
+  "titleTab": {
+    "library": "LIBRERIA",
+    "wishlist": "LISTA DE DESEOS",
+    "addNew": "AGREGAR NUEVO",
+    "rentals": "RENTAS",
+    "settings": "CONFIGURACION",
+    "bookDetail": "DETALLES DEL LIBRO"
   }
 }

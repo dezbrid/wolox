@@ -16,10 +16,11 @@
     "onlyEmail":", valid email is example@email.com"
   },
   "button":{
-    "login":"Login",
+    "login":"LOGIN",
     "lang":"English",
     "rent": "RENT",
-    "addWish":"ADD TO WISHLIST"
+    "addWish":"ADD TO WISHLIST",
+    "logout":"LOGOUT"
   },
   "login":{
     "term":"Accept terms and conditions"

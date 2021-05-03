@@ -5,3 +5,4 @@ export { default as PickerCustom } from './PickerCustom';
 export { default as ProgressFullView } from './ProgressFullView';
 export { default as AlertInfo } from './AlertInfo';
 export { default as ViewContainer } from './ViewContainer';
+export { default as LangSwitch } from './LangSwitch';
