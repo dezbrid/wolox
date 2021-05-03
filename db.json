@@ -63,6 +63,22 @@
       "age": "18",
       "term": true,
       "id": 8
+    },
+    {
+      "name": "danie",
+      "last_name": "ordoez",
+      "email": "daniel@hhh.com",
+      "age": "30",
+      "term": true,
+      "id": 9
+    },
+    {
+      "name": "DANIEL ord",
+      "last_name": "ordoñez",
+      "email": "dezbrid@gmail.com",
+      "age": "43",
+      "term": true,
+      "id": 10
     }
   ],
   "books": [

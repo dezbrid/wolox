@@ -14,15 +14,13 @@ function TextInputCustom(props) {
         valueInput,
         setCustom,
         nameInput,
-        icon,
         placeholder,
         errorInput,
         errorText,
         onBlurCustom,
         setCustomWithValue,
         label,
-        iconTouch,
-        iconTouchFunction,
+
     } = props
 
 
@@ -50,26 +48,7 @@ function TextInputCustom(props) {
             onBlurCustom(nameInput)
         }
     };
-    /*const IconCustom = () => {
-        if (iconTouch) {
-            return (
-                <TouchableOpacity onPress={iconTouchFunction}>
-                    <Icon
-                        name={icon}
-                        size={17}
-                        color={Colors.gray}
-                        style={styles.inputIconContent} />
-                </TouchableOpacity>
-            )
-        }
-        return (
-            <Icon
-                name={icon}
-                size={17}
-                color={Colors.gray}
-                style={styles.inputIconContent} />
-        )
-    }*/
+
 
     return (
         <View >
@@ -79,12 +58,11 @@ function TextInputCustom(props) {
                     placeholder={placeholder}
                     onChangeText={text => handleOnChangeText(text)}
                     value={valueInput}
-                    style={styles.flexOne}
+                    style={[styles.flexOne,styles.customFont]}
                     onBlur={handleOnBlur}
                     autoCorrect={false}
                     autoCapitalize={'none'}
                 />
-                {/*icon && <IconCustom />*/}
 
             </View>
             <Text style={[errorInput ? styles.opacityOn : styles.opacityOff, styles.errorTextInputText,]}>{errorText}</Text>
