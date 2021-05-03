@@ -26,10 +26,10 @@ export const styles = StyleSheet.create({
     alignSelfStretch: { alignSelf: 'stretch' },
     flexColumn: { flexDirection: 'column' },
     flexRow: { flexDirection: 'row' },
-    textColorRed: { color: colors.redError, fontFamily: 'Nunito-Light' },
-    textColorWhite: { color: colors.white, fontFamily: 'Nunito-Light' },
+    textColorRed: { color: colors.redError, fontFamily: 'Nunito-Light', fontSize: window.height * 0.02 },
+    textColorWhite: { color: colors.white, fontFamily: 'Nunito-Light', fontSize: window.height * 0.02 },
     textColorBlack: { color: colors.black, },
-    customFont: { fontFamily: 'Nunito-Light',fontSize:window.height*0.02 },
+    customFont: { fontFamily: 'Nunito-Light', fontSize: window.height * 0.022 },
     height40: { height: 40 },
     success: { backgroundColor: colors.greeSuccess },
     error: { backgroundColor: colors.redError },
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
         color: 'white',
         textTransform: 'uppercase',
         fontFamily: 'Nunito-BlackItalic',
-        fontSize:window.height*0.028,
+        fontSize: window.height * 0.028,
     },
     container: {
         flex: 1,
@@ -49,10 +49,10 @@ export const styles = StyleSheet.create({
     },
     backgroundColorBlue: { backgroundColor: colors.blue },
     backgroundColorWhite: { backgroundColor: colors.white },
-    iconsHeader: { marginHorizontal: window.height*0.03 },
-    headerBackground: { width: '100%', minHeight: window.height*0.17 },
+    iconsHeader: { marginHorizontal: window.height * 0.015, height: window.height * 0.02 },
+    headerBackground: { width: '100%', minHeight: window.height * 0.17 },
     backgroundColorBlueLight: { backgroundColor: colors.blueLight },
-    viewContainer: { paddingTop: window.height*0.135 },
+    viewContainer: { paddingTop: window.height * 0.135 },
     imageBackground: {
         flex: 1,
         resizeMode: "cover",
@@ -67,15 +67,16 @@ export const styles = StyleSheet.create({
     viewTextInputLogin: {
         flex: 5,
         backgroundColor: colors.white,
-        paddingHorizontal: 20,
+        paddingHorizontal: window.height * 0.03,
         paddingTop: 30,
         borderRadius: 15,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     labelTextInput: {
-        fontSize: 8,
+        fontSize: window.height*0.011,
         marginLeft: 10,
         backgroundColor: colors.blueDark,
         color: colors.white,
@@ -97,12 +98,14 @@ export const styles = StyleSheet.create({
         borderRadius: 50,
         paddingLeft: 10,
         minHeight: 40,
-        fontFamily: 'Nunito-Light'
+        fontFamily: 'Nunito-Light',
+        width: window.width * 0.7,
+
     },
     errorTextInputText: {
         color: colors.redLight,
         paddingLeft: 20,
-        fontSize: 8,
+        fontSize: window.height*0.01,
         marginTop: -1,
         marginBottom: 5,
         fontFamily: 'Nunito-Light'
@@ -111,6 +114,8 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 50,
         overflow: 'hidden',
+        width: window.width * 0.7,
+        alignSelf: 'center'
     },
     buttonDisable: {
         opacity: 0.3,
@@ -124,6 +129,12 @@ export const styles = StyleSheet.create({
 
     },
     buttonImagen: { padding: 12, },
+    buttonBorder: {
+        justifyContent: 'center',
+        borderRadius: 50, borderWidth: 2, borderColor: colors.blue, paddingVertical: 10,
+        width: window.width * 0.7,
+        alignSelf: 'center'
+    },
     viewCheckBox: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -189,26 +200,26 @@ export const styles = StyleSheet.create({
     },
     cardBookContainer: {
         backgroundColor: 'white',
-        paddingVertical:  window.width*0.05,
-        marginVertical:  window.width*0.015,
+        paddingVertical: window.width * 0.05,
+        marginVertical: window.width * 0.015,
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 1,
         shadowRadius: 20,
         elevation: 4,
         borderRadius: 5,
-        paddingHorizontal: window.height*0.03,
+        paddingHorizontal: window.height * 0.03,
         flexDirection: 'row',
     },
-    cardBookImagen: { flex: 1, height:  window.height*0.15 },
+    cardBookImagen: { flex: 1, height: window.height * 0.15 },
     cardBookView: { flex: 3, flexDirection: 'column', marginLeft: 20 },
-    textTitle: { fontSize: window.height*0.025, fontFamily: 'Nunito-BlackItalic' },
+    textTitle: { fontSize: window.height * 0.025, fontFamily: 'Nunito-BlackItalic' },
     searchBarView: {
         backgroundColor: 'white',
         flex: 1,
         alignItems: 'center',
         flexDirection: 'row',
         paddingHorizontal: 10,
-        height: 40,
+        height: window.height * 0.048,
         borderRadius: 10,
     },
     searchBarImagen: {
@@ -216,23 +227,23 @@ export const styles = StyleSheet.create({
         width: 15
     },
     paddingHorizontal: {
-        paddingHorizontal: 20
+        paddingHorizontal: window.height * 0.03
     },
-    bookSuggestionImagen: { flex: 1, height: 120, width: 80, marginLeft: 6 },
-    bookDetailScrollView: { flex: 1, flexGrow: 1, paddingHorizontal: 20 },
+    bookSuggestionImagen: { flex: 1, height: window.height * 0.18, width: window.width * 0.19, marginLeft: 6 },
+    bookDetailScrollView: { flex: 1, flexGrow: 1, paddingHorizontal: window.height * 0.03 },
     bookDetailCardBook: {
         backgroundColor: 'white',
-        paddingHorizontal: 20,
-        paddingVertical: 15,
-        minHeight: 320,
+        paddingHorizontal: window.width * 0.06,
+        paddingVertical: window.width * 0.04,
+        height: window.height * 0.4,
         marginBottom: 10,
         borderRadius: 10
     },
-    bookDetailViewBook: { flexDirection: 'row', marginBottom: 20, flex: 3 },
+    bookDetailViewBook: { flexDirection: 'row', marginBottom: 8, flex: 3 },
     bookDetailImagen: { flex: 1, marginRight: 20, },
     bookDetailViewInfo: { flexDirection: 'column', flex: 2 },
-    bookDetailViewButtons: { justifyContent: 'space-around', flex: 1 },
-    bookDetailViewSuggetion: { backgroundColor: 'white', paddingHorizontal: 20, paddingVertical: 10, marginBottom: 10, borderRadius: 10 },
+    bookDetailViewButtons: { justifyContent: 'space-evenly', flex: 2, },
+    bookDetailViewSuggetion: { backgroundColor: 'white', paddingHorizontal: window.height * 0.03, paddingVertical: window.width * 0.05, marginBottom: 10, borderRadius: 10 },
     bookDetailComments: {
         backgroundColor: colors.white,
         borderRadius: 10
@@ -258,5 +269,12 @@ export const styles = StyleSheet.create({
         marginVertical: 4,
         fontFamily: 'Nunito-Light'
     },
-    dialogContainer: { backgroundColor: 'white', borderRadius: 20, minHeight: 280, margin: 20, padding: 20, justifyContent: 'space-around' }
+    dialogContainer: {
+        backgroundColor: 'white',
+        borderRadius: 20,
+        minHeight: 300,
+        margin: 20,
+        padding: 20,
+        justifyContent: 'space-around'
+    }
 });
