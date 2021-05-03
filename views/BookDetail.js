@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useContext } from 'react';
+import React, { useLayoutEffect, useContext, useEffect, useRef } from 'react';
 import {
     Text,
     TouchableOpacity,
@@ -7,7 +7,8 @@ import {
     ScrollView,
     FlatList,
     TouchableNativeFeedback,
-    ImageBackground
+    ImageBackground,
+    Animated
 } from 'react-native';
 import { ViewContainer, ButtonCustom } from '../Components';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -16,6 +17,7 @@ import { StoreContext } from '../store';
 import lang from '../Lang/translations';
 
 function BookDetail() {
+    const fadeAnim = useRef(new Animated.Value(0)).current
     const navigation = useNavigation()
     const storeContext = useContext(StoreContext)
     const route = useRoute();
@@ -24,6 +26,16 @@ function BookDetail() {
     const languages = storeContext.state.languages;
     const suggestionBooks = books.filter((bookObj) => { return bookObj.genre === bookData.genre && bookObj.id !== bookData.id })
 
+    useEffect(() => {
+        Animated.timing(
+            fadeAnim,
+            {
+                toValue: 1,
+                duration: 2000,
+                useNativeDriver: true
+            }
+        ).start();
+    }, [fadeAnim])
     useLayoutEffect(() => {
         navigation.setOptions({
             headerLeft: () => <TouchableOpacity onPress={() => navigation.navigate("Library")}>
@@ -47,7 +59,7 @@ function BookDetail() {
     }
     return (
         <ViewContainer styleView={styles.viewContainer}>
-            <ScrollView style={styles.bookDetailScrollView}>
+            <Animated.ScrollView style={[styles.bookDetailScrollView,{opacity: fadeAnim}]}>
                 <View style={styles.bookDetailCardBook}>
                     <View style={styles.bookDetailViewBook}>
                         <Image
@@ -105,7 +117,7 @@ function BookDetail() {
                         }
                     </View>}
 
-            </ScrollView>
+            </Animated.ScrollView>
         </ViewContainer>
     );
 }
