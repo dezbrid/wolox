@@ -56,7 +56,7 @@ function BookDetail() {
                             resizeMode='stretch' />
                         <View style={styles.bookDetailViewInfo}>
                             <Text style={styles.textTitle}>{bookData.title}</Text>
-                            <Text>{bookData.author}</Text>
+                            <Text style={{fontFamily:'Nunito-Light'}}>{bookData.author}</Text>
                             <Text>{bookData.publisher}</Text>
                             <Text>{bookData.year}</Text>
                             <Text>{bookData.genre}</Text>

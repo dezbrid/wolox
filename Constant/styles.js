@@ -184,7 +184,7 @@ export const styles = StyleSheet.create({
     },
     cardBookImagen: { flex: 1, height: 100 },
     cardBookView: { flex: 3, flexDirection: 'column', marginLeft: 20 },
-    textTitle: { fontWeight: "bold", fontSize: 20 },
+    textTitle: { fontWeight: "bold", fontSize: 20,fontFamily:'Nunito-Light' },
     searchBarView: {
         backgroundColor: 'white',
         flex: 1,
