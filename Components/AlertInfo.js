@@ -17,7 +17,7 @@ function AlertInfo(props) {
     useEffect(() => {
         setTimeout(() => {
             handleClose()
-        }, 1000);
+        }, 2000);
 
     }, [])
     function handleClose() {

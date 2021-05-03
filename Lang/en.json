@@ -7,7 +7,8 @@
     "last_name": "Last Name",
     "email": "Email",
     "age":"Age",
-    "search":"Search..."
+    "search":"Search...",
+    "suggestion": "Suggestion for you"
   },
   "errorInput":{
     "invalid":"Invalid %{textInput}",

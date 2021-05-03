@@ -23,7 +23,11 @@ function Library() {
     const booksFilter = storeContext.state.booksFilter;
     const [arrayBooks, setArrayBooks] = useState(books);
     useEffect(() => {
-        setArrayBooks(booksFilter)
+        if (booksFilter.length > 0) {
+            setArrayBooks(booksFilter)
+        } else {
+            setArrayBooks(books)
+        }
     }, [booksFilter])
     useEffect(() => {
         const prueba = async () => {
@@ -43,15 +47,15 @@ function Library() {
         }, [])
     );
     function handleOpenBookDetail(item) {
-        navigation.navigate("BookDetail",{item})
-        
+        navigation.navigate("BookDetail", { item })
+
     }
 
     function cardBook({ item }) {
         return (
-            <TouchableNativeFeedback onPress={()=>handleOpenBookDetail(item)}>
+            <TouchableNativeFeedback onPress={() => handleOpenBookDetail(item)}>
                 <View style={styles.cardBookContainer}>
-                    <Image source={item.image_url?{ uri: item.image_url }:require('../Assets/General/img_book_placeholder.png')} style={styles.cardBookImagen} resizeMode='contain' />
+                    <Image source={item.image_url ? { uri: item.image_url } : require('../Assets/General/img_book_placeholder.png')} style={styles.cardBookImagen} resizeMode='contain' />
                     <View style={styles.cardBookView}>
                         <Text style={styles.cardBookTitle} >{item.title}</Text>
                         <Text >{item.author}</Text>
