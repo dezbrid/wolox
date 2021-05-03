@@ -79,6 +79,30 @@
       "age": "43",
       "term": true,
       "id": 10
+    },
+    {
+      "name": "daniel",
+      "last_name": "ordoñez",
+      "email": "d23n6r2r@gmail.com",
+      "age": "26",
+      "term": true,
+      "id": 11
+    },
+    {
+      "name": "daniel",
+      "last_name": "ordo",
+      "email": "dez@yopmail.com",
+      "age": "18",
+      "term": true,
+      "id": 12
+    },
+    {
+      "name": "danie",
+      "last_name": "ordoñez",
+      "email": "dezbrid@gmail.com",
+      "age": "18",
+      "term": true,
+      "id": 13
     }
   ],
   "books": [

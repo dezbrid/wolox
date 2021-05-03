@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import {
     Text,
-    View,
-    TouchableNativeFeedback
+    TouchableNativeFeedback,
+    Animated
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { styles } from '../Constant/styles';
@@ -12,12 +12,23 @@ import { ALERT_INFO_ACTION } from '../Constant/actionType';
 
 function AlertInfo(props) {
     const { textInfo, type } = props
+    const fadeAnim = useRef(new Animated.Value(0)).current
     const storeContext = useContext(StoreContext);
     const dispatch = storeContext.dispatch;
     useEffect(() => {
+        Animated.timing(
+            fadeAnim,
+            {
+                toValue: 1,
+                duration: 2000,
+                useNativeDriver: true
+            }
+        ).start();
+    }, [fadeAnim])
+    useEffect(() => {
         setTimeout(() => {
             handleClose()
-        }, 2000);
+        }, 5000);
 
     }, [])
     function handleClose() {
@@ -25,11 +36,11 @@ function AlertInfo(props) {
     }
 
     return (
-        <View style={[styles.alertInfoContainer, styles[type]]}>
+        <Animated.View style={[styles.alertInfoContainer, styles[type],{opacity: fadeAnim}]}>
             <TouchableNativeFeedback onPress={handleClose}>
                 <Text style={styles.textColorWhite}> {textInfo}</Text>
             </TouchableNativeFeedback>
-        </View>
+        </Animated.View>
     );
 }
 AlertInfo.propTypes = {
