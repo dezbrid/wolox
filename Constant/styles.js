@@ -23,13 +23,15 @@ export const styles = StyleSheet.create({
     alignSelfStretch: { alignSelf: 'stretch' },
     flexColumn: { flexDirection: 'column' },
     flexRow: { flexDirection: 'row' },
-    textColorWhite: { color: colors.white },
+    textColorWhite: { color: colors.white, fontFamily: 'Nunito-Light' },
+    customFont: { fontFamily: 'Nunito-Light' },
+    height40: { height: 40 },
     success: { backgroundColor: colors.greeSuccess },
     error: { backgroundColor: colors.redError },
     opacityOn: { opacity: 1 },
     opacityOff: { opacity: 0 },
     buttonImagen: { padding: 12, },
-    headerTitle: { textAlign: 'center', color: 'white', textTransform: 'uppercase' },
+    headerTitle: { textAlign: 'center', color: 'white', textTransform: 'uppercase',fontFamily: 'Nunito-BlackItalic' },
     container: {
         flex: 1,
         flexDirection: "column",
@@ -71,7 +73,8 @@ export const styles = StyleSheet.create({
         marginBottom: -6,
         alignSelf: 'flex-start',
         zIndex: 1,
-        elevation: 1
+        elevation: 1,
+        fontFamily: 'Nunito-Light'
     },
     errorTextInputContainer: {
         borderColor: colors.redLight,
@@ -83,13 +86,15 @@ export const styles = StyleSheet.create({
         borderRadius: 50,
         paddingLeft: 10,
         minHeight: 40,
+        fontFamily: 'Nunito-Light'
     },
     errorTextInputText: {
         color: colors.redLight,
         paddingLeft: 20,
-        fontSize: 10,
+        fontSize: 8,
         marginTop: -1,
-        marginBottom: 5
+        marginBottom: 5,
+        fontFamily: 'Nunito-Light'
     },
     buttonContainer: {
         justifyContent: 'center',
@@ -104,7 +109,7 @@ export const styles = StyleSheet.create({
         fontSize: 13,
         color: colors.white,
         textAlign: 'center',
-        fontWeight: 'bold'
+        fontFamily: 'Nunito-BlackItalic'
 
     },
     buttonImagen: { padding: 12, },
@@ -120,7 +125,8 @@ export const styles = StyleSheet.create({
     },
     textCheckBox: {
         alignSelf: 'center',
-        marginLeft: 10
+        marginLeft: 10,
+        fontFamily: 'Nunito-Light'
     },
     modalContainer: {
         flex: 1,
@@ -184,7 +190,7 @@ export const styles = StyleSheet.create({
     },
     cardBookImagen: { flex: 1, height: 100 },
     cardBookView: { flex: 3, flexDirection: 'column', marginLeft: 20 },
-    textTitle: { fontWeight: "bold", fontSize: 20 },
+    textTitle: { fontSize: 20, fontFamily: 'Nunito-BlackItalic' },
     searchBarView: {
         backgroundColor: 'white',
         flex: 1,
@@ -226,4 +232,10 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
 
     },
+    buttonTextBorder: {
+        fontSize: 13,
+        color: colors.blue,
+        textAlign: 'center',
+        fontFamily: 'Nunito-BlackItalic'
+    }
 });

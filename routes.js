@@ -59,7 +59,7 @@ function TabLibrary() {
                         placeholder={lang.t("placeholder.search", { locale: languages })}
                         autoCorrect={false}
                         autoCapitalize='none'
-                        style={styles.flexOne}
+                        style={[styles.flexOne,styles.customFont]}
                     />
                 </View>
             )
@@ -254,7 +254,8 @@ function StackNavigator() {
             screenOptions={{
                 headerBackground: () => <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
                 headerTintColor:colors.white ,
-                headerTitleAlign:'center'
+                headerTitleAlign:'center',
+                headerTitleStyle: styles.headerTitle
               
             }}
         >

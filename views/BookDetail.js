@@ -56,10 +56,10 @@ function BookDetail() {
                             resizeMode='stretch' />
                         <View style={styles.bookDetailViewInfo}>
                             <Text style={styles.textTitle}>{bookData.title}</Text>
-                            <Text>{bookData.author}</Text>
-                            <Text>{bookData.publisher}</Text>
-                            <Text>{bookData.year}</Text>
-                            <Text>{bookData.genre}</Text>
+                            <Text style={styles.customFont}>{bookData.author}</Text>
+                            <Text style={styles.customFont}>{bookData.publisher}</Text>
+                            <Text style={styles.customFont}>{bookData.year}</Text>
+                            <Text style={styles.customFont}>{bookData.genre}</Text>
                         </View>
                     </View>
                     <View style={styles.bookDetailViewButtons}>
@@ -96,7 +96,7 @@ function BookDetail() {
                                         <Image source={photo} style={styles.cardBookImagen} resizeMode='contain' />
                                         <View style={styles.cardBookView}>
                                             <Text style={styles.textTitle} >{comment.name}</Text>
-                                            <Text >{comment.comment}</Text>
+                                            <Text style={styles.customFont}>{comment.comment}</Text>
                                         </View>
 
                                     </View>

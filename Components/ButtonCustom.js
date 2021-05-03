@@ -41,12 +41,7 @@ function ButtonCustom(props) {
             onPress={onPressCustom}
             disabled={disabledCustom}
         >
-            <Text style={{
-                fontSize: 13,
-                color: colors.blue,
-                textAlign: 'center',
-                fontWeight:'bold'
-            }}>{textButton}</Text>
+            <Text style={styles.buttonTextBorder}>{textButton}</Text>
 
         </TouchableHighlight>
     );

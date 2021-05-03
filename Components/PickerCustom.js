@@ -31,7 +31,7 @@ function PickerCustom(props) {
                 <Text style={[label ? styles.opacityOn : styles.opacityOff, styles.labelTextInput]}>{placeholder}</Text>
                 <TouchableNativeFeedback onPress={handleModalOpen}>
                     <View style={styles.textInputContainer}>
-                        <Text style={styles.alignSelfCenter}>{value}</Text>
+                        <Text style={[styles.alignSelfCenter,styles.customFont]}>{value}</Text>
                     </View>
                 </TouchableNativeFeedback>
                 <Modal
@@ -53,11 +53,11 @@ function PickerCustom(props) {
                                     onValueChange={(itemValue, itemIndex) =>
                                         setValue(itemValue)
                                     }
-                                    style={{ height: 40 }}>
+                                    style={[ styles.height40 ,styles.customFont]}>
                                     {
                                         items.map((item, index) => {
                                             return (
-                                                <Picker.Item label={item.label} value={item.value} key={index} />
+                                                <Picker.Item label={item.label} value={item.value} key={index} style={styles.customFont} />
                                             )
                                         })
                                     }
@@ -87,11 +87,11 @@ function PickerCustom(props) {
                     onValueChange={(itemValue, itemIndex) =>
                         setValue(itemValue)
                     }
-                    style={{ flex: 1, maxHeight: 40 }}>
+                    style={[styles.flexOne,styles.height40,styles.customFont]}>
                     {
                         items.map((item, index) => {
                             return (
-                                <Picker.Item label={item.label} value={item.value} key={index} />
+                                <Picker.Item label={item.label} value={item.value} key={index} style={styles.customFont} />
                             )
                         })
                     }

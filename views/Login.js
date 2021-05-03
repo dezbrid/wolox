@@ -152,6 +152,7 @@ function Login() {
                                 label={textInput.valueInput !== ''}
                                 errorInput={textInput.errorInput}
                                 errorText={textInput.errorText}
+                               
                             />
                         )
                     })
@@ -183,7 +184,7 @@ function Login() {
                     disabledCustom={handleDisabledButton()}
                 />
                 <View style={styles.flexRow}>
-                    <Text style={styles.alignSelfCenter}> {lang.t("button.lang", { locale: languages })}</Text>
+                    <Text style={[styles.alignSelfCenter,,styles.customFont]}> {lang.t("button.lang", { locale: languages })}</Text>
                     <Switch
                         trackColor={{ true: colors.blue, false: colors.gray, }}
                         thumbColor={langSwitch ? colors.blueDark : colors.grayBack}
