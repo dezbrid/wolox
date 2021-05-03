@@ -215,7 +215,7 @@ export const styles = StyleSheet.create({
     bookDetailImagen: { flex: 1, marginRight: 20, },
     bookDetailViewInfo: { flexDirection: 'column', flex: 2 },
     bookDetailViewButtons: { justifyContent: 'space-around', flex: 1 },
-    bookDetailViewSuggetion: { backgroundColor: 'white', paddingHorizontal: 20, paddingVertical: 10, marginBottom: 10,borderRadius: 10 },
+    bookDetailViewSuggetion: { backgroundColor: 'white', paddingHorizontal: 20, paddingVertical: 10, marginBottom: 10, borderRadius: 10 },
     bookDetailComments: {
         backgroundColor: colors.white,
         borderRadius: 10
@@ -226,7 +226,4 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
 
     },
-
-
-
 });
