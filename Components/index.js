@@ -6,3 +6,4 @@ export { default as ProgressFullView } from './ProgressFullView';
 export { default as AlertInfo } from './AlertInfo';
 export { default as ViewContainer } from './ViewContainer';
 export { default as LangSwitch } from './LangSwitch';
+export { default as Dialog } from './Dialog';

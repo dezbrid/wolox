@@ -1,7 +1,5 @@
 {
-  "universal": {
-    "close": "cerrar"
-  },
+  
   "placeholder": {
     "name": "Nombre",
     "last_name": "Apellido",
@@ -20,13 +18,16 @@
     "lang": "Español",
     "rent": "RENTAR",
     "addWish": "AGREGAR A LISTA DE DESEOS",
-    "logout": "CERRAR SECCION"
+    "logout": "CERRAR SECCION",
+    "close": "CERRAR"
   },
   "login": {
     "term": "Acepto terminos y condiciones"
   },
   "alert": {
-    "welcome": "Bienvenido"
+    "welcome": "Bienvenido",
+    "errorGetData":"Error al obtener datos del servidor",
+    "books":"Librerya cargada"
   },
   "titleTab": {
     "library": "LIBRERIA",
@@ -35,5 +36,9 @@
     "rentals": "RENTAS",
     "settings": "CONFIGURACION",
     "bookDetail": "DETALLES DEL LIBRO"
+  },
+  "dialog":{
+    "errorConnectTo":"Error al conectarse a %{address}. ",
+    "changeAddress":"Por favor cambie la dirrecion del servidor actual que es:"
   }
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useContext, useState, useEffect, useCallback } from 'react';
 import {
     FlatList,
     Text,
@@ -12,6 +12,14 @@ import { ViewContainer } from '../Components';
 import { styles } from '../Constant/styles';
 import { useFocusEffect } from '@react-navigation/native';
 import { SEARCH_BAR_ACTION } from '../Constant/actionType';
+import { apiCall } from '../Api';
+import { BOOKS, URL_API } from '../Constant/url';
+import {
+    BOOKS_ACTION,
+
+    ALERT_INFO_ACTION
+} from '../Constant/actionType';
+import lang from '../Lang/translations';
 
 
 
@@ -21,31 +29,53 @@ function Library() {
     const navigation = useNavigation();
     const books = storeContext.state.books;
     const booksFilter = storeContext.state.booksFilter;
+    const server_address = storeContext.state.server_address;
+    const languages = storeContext.state.languages;
+    const searchBar = storeContext.state.searchBar
     const [arrayBooks, setArrayBooks] = useState(books);
+    const [isLoading, setIsloading] = useState(false)
+
+    useFocusEffect(
+        useCallback(() => {
+            onGetBooks()
+        }, [])
+    );
     useEffect(() => {
-        if (booksFilter.length > 0) {
-            setArrayBooks(booksFilter)
-        } else {
+        if (searchBar.text === '') {
+
             setArrayBooks(books)
+        } else {
+            setArrayBooks(booksFilter)
         }
-    }, [booksFilter])
+    }, [booksFilter, searchBar])
     useEffect(() => {
-        const prueba = async () => {
-            setTimeout(() => {
-                console.log('prueba')
-            }, 1000);
-        }
-        prueba()
-    }, [booksFilter])
+        setArrayBooks(books)
+
+    }, [books])
 
     useFocusEffect(
         useCallback(() => {
             return () => {
-                setArrayBooks(books)
                 dispatch({ type: SEARCH_BAR_ACTION, payload: { open: false, text: '' } })
             }
         }, [])
     );
+    async function onGetBooks() {
+
+        const urlBase = server_address === '' ? URL_API : server_address;
+        setIsloading(true)
+        try {
+            const responseBooks = await apiCall(urlBase + BOOKS, null, null, 'GET')
+            dispatch({ type: BOOKS_ACTION, payload: responseBooks.data })
+            dispatch({ type: ALERT_INFO_ACTION, payload: { open: true, text: lang.t("alert.books", { locale: languages }), type: 'success' } })
+            setIsloading(false)
+        } catch (error) {
+            setIsloading(false)
+            dispatch({ type: ALERT_INFO_ACTION, payload: { open: true, text: lang.t("alert.errorGetData", { locale: languages }), type: 'error' } })
+        }
+
+
+    }
     function handleOpenBookDetail(item) {
         navigation.navigate("BookDetail", { item })
 
@@ -73,6 +103,8 @@ function Library() {
                 keyExtractor={(item) => item.id}
                 extraData={arrayBooks}
                 style={styles.iconsHeader}
+                refreshing={isLoading}
+                onRefresh={onGetBooks}
             />
 
         </ViewContainer>

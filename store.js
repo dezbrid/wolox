@@ -8,6 +8,8 @@ import {
     IS_LOADING_ACTION,
     ALERT_INFO_ACTION,
     SEARCH_BAR_ACTION,
+    SERVER_ADDRESS_ACTION,
+    DIALOG_ACTION
 } from './Constant/actionType'
 
 export const StoreContext = React.createContext();
@@ -24,11 +26,21 @@ export const initialState = {
     searchBar: {
         text: '',
         open: false
-    }
+    },
+    server_address: '',
+    dialog: {
+        title: '',
+        message: '',
+        open: false
+    },
 }
 
 export const storeReducer = (state, action) => {
     switch (action.type) {
+        case SERVER_ADDRESS_ACTION:
+            return { ...state, server_address: action.payload };
+        case DIALOG_ACTION:
+            return { ...state, dialog: action.payload }
         case LOGIN_ACTION:
             return { ...state, session_active: true, user: { ...action.payload }, is_loading: false };
         case ASYNCSTORAGE_ACTION:

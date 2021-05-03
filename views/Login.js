@@ -3,18 +3,18 @@ import {
     View,
     Image,
     Text,
-    Switch
+    TextInput
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../store';
-import { SIGN_IN, BOOKS } from '../Constant/url';
+import { SIGN_IN, URL_API } from '../Constant/url';
 import {
     LOGIN_ACTION,
-    LANGUAGES_ACTION,
-    BOOKS_ACTION,
     IS_LOADING_ACTION,
-    ALERT_INFO_ACTION
+    ALERT_INFO_ACTION,
+    DIALOG_ACTION,
+    SERVER_ADDRESS_ACTION
 } from '../Constant/actionType';
 import { onlyLetter, emailValidation } from '../Constant/regex';
 import lang from '../Lang/translations';
@@ -24,14 +24,21 @@ import {
     ButtonCustom,
     PickerCustom,
     ViewContainer,
-    LangSwitch
+    LangSwitch,
+    Dialog
 } from '../Components';
 import { apiCall } from '../Api';
 
 function Login() {
     const navigation = useNavigation();
     const storeContext = useContext(StoreContext);
+    const dispatch = storeContext.dispatch;
     const languages = storeContext.state.languages;
+    const dialog = storeContext.state.dialog;
+    const server_address = storeContext.state.server_address;
+    const [age, setAge] = useState('30');
+    const [term, setTerm] = useState(false);
+    const [serverAddress, setServerAddress] = useState('');
     const [signIn, setSignIn] = useState({
         name: {
             value: '',
@@ -49,10 +56,8 @@ function Login() {
             regex: emailValidation,
         }
     });
-    const [age, setAge] = useState('18');
-    const [term, setTerm] = useState(false);
 
-    const dispatch = storeContext.dispatch;
+
 
     const configTextInput = [
 
@@ -96,16 +101,23 @@ function Login() {
             age: age,
             term: term
         }
+        const urlBase = server_address === '' ? URL_API : server_address;
         try {
-            const responseSignIn = await apiCall(SIGN_IN, dataToSend, null, 'POST');
-            const responseBooks = await apiCall(BOOKS, null, null, 'GET')
-            dispatch({ type: BOOKS_ACTION, payload: responseBooks.data })
+            const responseSignIn = await apiCall(urlBase + SIGN_IN, dataToSend, null, 'POST');
             dispatch({ type: ALERT_INFO_ACTION, payload: { open: true, text: lang.t("alert.welcome", { locale: languages }), type: 'success' } })
             dispatch({ type: LOGIN_ACTION, payload: responseSignIn.data })
             navigation.navigate("Main")
         } catch (error) {
-            dispatch({ type: ALERT_INFO_ACTION, payload: { open: true, text: { error }, type: 'error' } })
-            dispatch({ type: IS_LOADING_ACTION, payload: 'false' })
+            dispatch({ type: IS_LOADING_ACTION, payload: false })
+            dispatch({
+                type: DIALOG_ACTION, payload: {
+                    title: 'Error',
+                    message: lang.t("dialog.errorConnectTo", { locale: languages, address: `${urlBase}${SIGN_IN}` }),
+                    open: true
+                }
+            })
+            dispatch({ type: ALERT_INFO_ACTION, payload: { open: true, text: lang.t("alert.errorGetData", { locale: languages }), type: 'error' } })
+
         }
 
 
@@ -122,12 +134,30 @@ function Login() {
         }
         return emptyText || errorText || !term
     };
+    function handleOnBlurChangeServerAddress() {
+        dispatch({ type: SERVER_ADDRESS_ACTION, payload: serverAddress })
+    }
 
     return (
         <ViewContainer
             enableKeyboardAvoidingView={true}
             backgroundColorView={'backgroundColorBlue'}
         >
+            {dialog.open && <Dialog>
+                <View style={styles.changeServerView}>
+                    <Text style={styles.customFont}>{lang.t("dialog.changeAddress", { locale: languages })}</Text>
+                    <Text style={styles.textColorRed}>{server_address === '' ? URL_API : server_address}</Text>
+                </View>
+                <TextInput
+                    placeholder={'server address'}
+                    onChangeText={text => setServerAddress(text.toLowerCase())}
+                    value={serverAddress}
+                    style={styles.changeServerTextInput}
+                    onBlur={handleOnBlurChangeServerAddress}
+                    autoCorrect={false}
+                    autoCapitalize={'none'}
+                />
+            </Dialog>}
             <Image
                 source={require('../Assets/General/wbooks_logo.png')}
                 style={styles.LogoCenter}
