@@ -33,10 +33,7 @@ function ButtonCustom(props) {
     }
     return (
         <TouchableHighlight
-            style={[{
-                justifyContent: 'center',
-                borderRadius: 50,borderWidth:2,borderColor:colors.blue,paddingVertical:10
-            }, disabledCustom && styles.buttonDisable]}
+            style={[styles.buttonBorder, disabledCustom && styles.buttonDisable]}
             underlayColor={colors.blueOverlay}
             onPress={onPressCustom}
             disabled={disabledCustom}

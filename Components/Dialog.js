@@ -31,8 +31,8 @@ function Dialog(props) {
     return (
         <View style={styles.progressViewContainer}>
             <View style={styles.dialogContainer}>
-                <Text style={[styles.textTitle,styles.flexOne ,styles.textColorBlack]}>{dialog.title}</Text>
-                <Text style={[styles.customFont,styles.flexOne]}>{dialog.message}</Text>
+                <Text style={[styles.textTitle, styles.flexOne, styles.textColorBlack]}>{dialog.title}</Text>
+                <Text style={[styles.customFont, styles.flexOne]}>{dialog.message}</Text>
                 {children}
                 <ButtonCustom
                     typeImagen={false}
