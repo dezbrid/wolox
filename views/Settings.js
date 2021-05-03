@@ -6,19 +6,26 @@ import {
 } from 'react-native';
 import { StoreContext } from '../store';
 import { LOGOUT_ACTION } from '../Constant/actionType';
-import { ViewContainer } from '../Components';
+import { ViewContainer, ButtonCustom, LangSwitch } from '../Components';
 import { styles } from '../Constant/styles';
+import lang from '../Lang/translations';
 
 function Settings() {
-    const storeContext = useContext(StoreContext)
+    const storeContext = useContext(StoreContext);
+    const languages = storeContext.state.languages;
+
     return (
         <ViewContainer styleView={styles.viewContainer}>
-            <Text> Settings</Text>
-            <Button
-                onPress={() => {
+
+            <LangSwitch />
+
+            <ButtonCustom
+                onPressCustom={() => {
                     storeContext.dispatch({ type: LOGOUT_ACTION })
                 }}
-                title="logout" />
+                textButton={lang.t("button.logout", { locale: languages })}
+
+            />
         </ViewContainer>
     );
 }

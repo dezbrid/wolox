@@ -23,7 +23,8 @@ import {
     TextInputCustom,
     ButtonCustom,
     PickerCustom,
-    ViewContainer
+    ViewContainer,
+    LangSwitch
 } from '../Components';
 import { apiCall } from '../Api';
 
@@ -50,7 +51,7 @@ function Login() {
     });
     const [age, setAge] = useState('18');
     const [term, setTerm] = useState(false);
-    const [langSwitch, setLangSwitch] = useState(false);
+
     const dispatch = storeContext.dispatch;
 
     const configTextInput = [
@@ -84,14 +85,6 @@ function Login() {
             ages = [...ages, { label: `${index}`, value: `${index}` }]
         }
         return ages
-    };
-    function toggleSwitch() {
-        if (langSwitch) {
-            dispatch({ type: LANGUAGES_ACTION, payload: 'en' })
-        } else {
-            dispatch({ type: LANGUAGES_ACTION, payload: 'es' })
-        }
-        setLangSwitch(previousState => !previousState);
     };
 
     async function handleOnLogin() {
@@ -134,7 +127,7 @@ function Login() {
         <ViewContainer
             enableKeyboardAvoidingView={true}
             backgroundColorView={'backgroundColorBlue'}
-             >
+        >
             <Image
                 source={require('../Assets/General/wbooks_logo.png')}
                 style={styles.LogoCenter}
@@ -152,7 +145,7 @@ function Login() {
                                 label={textInput.valueInput !== ''}
                                 errorInput={textInput.errorInput}
                                 errorText={textInput.errorText}
-                               
+
                             />
                         )
                     })
@@ -183,16 +176,7 @@ function Login() {
                     textButton={lang.t("button.login", { locale: languages })}
                     disabledCustom={handleDisabledButton()}
                 />
-                <View style={styles.flexRow}>
-                    <Text style={[styles.alignSelfCenter,,styles.customFont]}> {lang.t("button.lang", { locale: languages })}</Text>
-                    <Switch
-                        trackColor={{ true: colors.blue, false: colors.gray, }}
-                        thumbColor={langSwitch ? colors.blueDark : colors.grayBack}
-                        onValueChange={toggleSwitch}
-                        value={langSwitch}
-                        style={styles.switch}
-                    />
-                </View>
+                <LangSwitch />
 
             </View>
         </ViewContainer>
