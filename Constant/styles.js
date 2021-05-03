@@ -35,6 +35,7 @@ export const styles = StyleSheet.create({
         flexDirection: "column",
     },
     backgroundColorBlue: { backgroundColor: colors.blue },
+    backgroundColorWhite: { backgroundColor: colors.white },
     iconsHeader: { marginHorizontal: 20 },
     width100: { width: '100%' },
     backgroundColorBlueLight: { backgroundColor: colors.blueLight },
@@ -103,7 +104,7 @@ export const styles = StyleSheet.create({
         fontSize: 13,
         color: colors.white,
         textAlign: 'center',
-        fontWeight:'bold'
+        fontWeight: 'bold'
 
     },
     buttonImagen: { padding: 12, },
@@ -183,7 +184,7 @@ export const styles = StyleSheet.create({
     },
     cardBookImagen: { flex: 1, height: 100 },
     cardBookView: { flex: 3, flexDirection: 'column', marginLeft: 20 },
-    cardBookTitle: { fontWeight: "bold", fontSize: 19 },
+    textTitle: { fontWeight: "bold", fontSize: 20 },
     searchBarView: {
         backgroundColor: 'white',
         flex: 1,
@@ -193,13 +194,39 @@ export const styles = StyleSheet.create({
         height: 40,
         borderRadius: 10,
     },
-    searchBarImagen:{
-        height: 15, 
+    searchBarImagen: {
+        height: 15,
         width: 15
     },
-    paddingHorizontal:{
-        paddingHorizontal:20
-    }
+    paddingHorizontal: {
+        paddingHorizontal: 20
+    },
+    bookSuggestionImagen: { flex: 1, height: 120, width: 80, marginLeft: 6 },
+    bookDetailScrollView: { flex: 1, flexGrow: 1, paddingHorizontal: 20 },
+    bookDetailCardBook: {
+        backgroundColor: 'white',
+        paddingHorizontal: 20,
+        paddingVertical: 15,
+        minHeight: 320,
+        marginBottom: 10,
+        borderRadius: 10
+    },
+    bookDetailViewBook: { flexDirection: 'row', marginBottom: 20, flex: 3 },
+    bookDetailImagen: { flex: 1, marginRight: 20, },
+    bookDetailViewInfo: { flexDirection: 'column', flex: 2 },
+    bookDetailViewButtons: { justifyContent: 'space-around', flex: 1 },
+    bookDetailViewSuggetion: { backgroundColor: 'white', paddingHorizontal: 20, paddingVertical: 10, marginBottom: 10,borderRadius: 10 },
+    bookDetailComments: {
+        backgroundColor: colors.white,
+        borderRadius: 10
+    },
+    bookDetailViewComment: {
+        paddingVertical: 20,
+        paddingHorizontal: 30,
+        flexDirection: 'row',
+
+    },
+
 
 
 });

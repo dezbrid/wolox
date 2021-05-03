@@ -65,7 +65,7 @@ function TabLibrary() {
             )
         }
         return (
-            <Text style={[styles.headerTitle, styles.cardBookTitle]}>{props.children}</Text>
+            <Text style={[styles.headerTitle, styles.textTitle]}>{props.children}</Text>
         )
 
 
