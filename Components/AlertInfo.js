@@ -20,7 +20,7 @@ function AlertInfo(props) {
             fadeAnim,
             {
                 toValue: 1,
-                duration: 2000,
+                duration: 1500,
                 useNativeDriver: true
             }
         ).start();
@@ -28,7 +28,7 @@ function AlertInfo(props) {
     useEffect(() => {
         setTimeout(() => {
             handleClose()
-        }, 5000);
+        }, 3000);
 
     }, [])
     function handleClose() {

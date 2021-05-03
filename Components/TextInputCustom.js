@@ -17,7 +17,6 @@ function TextInputCustom(props) {
         placeholder,
         errorInput,
         errorText,
-        onBlurCustom,
         setCustomWithValue,
         label,
 
@@ -58,8 +57,7 @@ function TextInputCustom(props) {
                     placeholder={placeholder}
                     onChangeText={text => handleOnChangeText(text)}
                     value={valueInput}
-                    style={[styles.flexOne,styles.customFont]}
-                    onBlur={handleOnBlur}
+                    style={[styles.flexOne, styles.customFont]}
                     autoCorrect={false}
                     autoCapitalize={'none'}
                 />
@@ -79,7 +77,6 @@ TextInputCustom.propTypes = {
     placeholder: PropTypes.string.isRequired,
     errorInput: PropTypes.bool,
     errorText: PropTypes.string,
-    onBlurCustom: PropTypes.func,
     label: PropTypes.bool,
     iconTouch: PropTypes.bool,
     iconTouchFunction: PropTypes.func
@@ -90,7 +87,6 @@ TextInputCustom.defaultProps = {
     nameInput: '',
     errorInput: false,
     errorText: '',
-    onBlurCustom: null,
     setCustomWithValue: null,
     label: false,
     iconTouch: false,

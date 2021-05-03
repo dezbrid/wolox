@@ -1,8 +1,5 @@
 {
-  "universal": {
-    "close": "close"
-  },
-  "placeholder": {
+   "placeholder": {
     "name": "Name",
     "last_name": "Last Name",
     "email": "Email",
@@ -20,13 +17,16 @@
     "lang":"English",
     "rent": "RENT",
     "addWish":"ADD TO WISHLIST",
-    "logout":"LOGOUT"
+    "logout":"LOGOUT",
+    "close": "CLOSE"
   },
   "login":{
     "term":"Accept terms and conditions"
   },
   "alert":{
-    "welcome":"Welcome"
+    "welcome":"Welcome",
+    "errorGetData":"Error getting data the server",
+    "books":"library charged"
   },
   "titleTab":{
     "library":"LIBRARY",
@@ -35,6 +35,10 @@
     "rentals":"RENTALS",
     "settings":"SETTINGS",
     "bookDetail":"BOOK DETAIL"
+  },
+  "dialog":{
+    "errorConnectTo":"Error connect to  %{address}.",
+    "changeAddress":"Please change the server´s  address, currently is:"
   }
 
 }

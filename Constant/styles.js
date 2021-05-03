@@ -14,7 +14,8 @@ export const colors = {
     grayBack: '#0A0A0ACC',
     shadow: '#000',
     greeSuccess: '#14c11e',
-    redError: '#c11414'
+    redError: '#c11414',
+    black:'#000000'
 
 }
 export const styles = StyleSheet.create({
@@ -23,7 +24,9 @@ export const styles = StyleSheet.create({
     alignSelfStretch: { alignSelf: 'stretch' },
     flexColumn: { flexDirection: 'column' },
     flexRow: { flexDirection: 'row' },
+    textColorRed: { color: colors.redError, fontFamily: 'Nunito-Light' },
     textColorWhite: { color: colors.white, fontFamily: 'Nunito-Light' },
+    textColorBlack:{ color: colors.black,  },
     customFont: { fontFamily: 'Nunito-Light' },
     height40: { height: 40 },
     success: { backgroundColor: colors.greeSuccess },
@@ -31,7 +34,7 @@ export const styles = StyleSheet.create({
     opacityOn: { opacity: 1 },
     opacityOff: { opacity: 0 },
     buttonImagen: { padding: 12, },
-    headerTitle: { textAlign: 'center', color: 'white', textTransform: 'uppercase',fontFamily: 'Nunito-BlackItalic' },
+    headerTitle: { textAlign: 'center', color: 'white', textTransform: 'uppercase', fontFamily: 'Nunito-BlackItalic' },
     container: {
         flex: 1,
         flexDirection: "column",
@@ -161,8 +164,8 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.grayBack,
         width: "100%",
         height: "100%",
-        opacity: 0.7,
-        justifyContent: 'center'
+        opacity: 0.9,
+        justifyContent: 'center',
     },
     alertInfoContainer: {
         flex: 1,
@@ -237,5 +240,15 @@ export const styles = StyleSheet.create({
         color: colors.blue,
         textAlign: 'center',
         fontFamily: 'Nunito-BlackItalic'
-    }
+    },
+    changeServerView: { flexDirection: 'row', flexWrap: 'wrap' },
+    changeServerTextInput: {
+        backgroundColor: colors.grayLight,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: colors.blue,
+        marginVertical: 4,
+        fontFamily: 'Nunito-Light'
+    },
+    dialogContainer: { backgroundColor: 'white', borderRadius: 20, minHeight: 280, margin: 20, padding: 20, justifyContent: 'space-around' }
 });
