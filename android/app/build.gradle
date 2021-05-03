@@ -129,7 +129,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
+     
     defaultConfig {
         applicationId "com.wolox"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -152,6 +152,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+         release {
+      storeFile file('wolox.keystore')
+      storePassword 'woloxDez'
+      keyAlias 'wolox_alias'
+      keyPassword 'woloxDez'
+    }
     }
     buildTypes {
            debug {

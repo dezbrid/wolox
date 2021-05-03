@@ -1,0 +1,44 @@
+{
+  
+  "placeholder": {
+    "name": "Nombre",
+    "last_name": "Apellido",
+    "email": "Correo",
+    "age": "Edad",
+    "search": "Buscar...",
+    "suggestion": "Sugeridos para ti"
+  },
+  "errorInput": {
+    "invalid": "%{textInput} invalido",
+    "onlyLatters": ", solo use letras",
+    "onlyEmail": ", ejemplo@correo.com es un correo valido"
+  },
+  "button": {
+    "login": "ACCESO",
+    "lang": "Español",
+    "rent": "RENTAR",
+    "addWish": "AGREGAR A LISTA DE DESEOS",
+    "logout": "CERRAR SECCION",
+    "close": "CERRAR"
+  },
+  "login": {
+    "term": "Acepto terminos y condiciones"
+  },
+  "alert": {
+    "welcome": "Bienvenido",
+    "errorGetData":"Error al obtener datos del servidor",
+    "books":"Librerya cargada"
+  },
+  "titleTab": {
+    "library": "LIBRERIA",
+    "wishlist": "LISTA DE DESEOS",
+    "addNew": "AGREGAR NUEVO",
+    "rentals": "RENTAS",
+    "settings": "CONFIGURACION",
+    "bookDetail": "DETALLES DEL LIBRO"
+  },
+  "dialog":{
+    "errorConnectTo":"Error al conectarse a %{address}. ",
+    "changeAddress":"Por favor cambie la dirrecion del servidor actual que es:"
+  }
+}
