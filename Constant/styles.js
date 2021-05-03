@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
+const window = Dimensions.get("window");
+const screen = Dimensions.get("screen");
 export const colors = {
     blue: "#04b2e3",
     blueLight: '#dceeff',
@@ -15,7 +17,7 @@ export const colors = {
     shadow: '#000',
     greeSuccess: '#14c11e',
     redError: '#c11414',
-    black:'#000000'
+    black: '#000000'
 
 }
 export const styles = StyleSheet.create({
@@ -26,25 +28,31 @@ export const styles = StyleSheet.create({
     flexRow: { flexDirection: 'row' },
     textColorRed: { color: colors.redError, fontFamily: 'Nunito-Light' },
     textColorWhite: { color: colors.white, fontFamily: 'Nunito-Light' },
-    textColorBlack:{ color: colors.black,  },
-    customFont: { fontFamily: 'Nunito-Light' },
+    textColorBlack: { color: colors.black, },
+    customFont: { fontFamily: 'Nunito-Light',fontSize:window.height*0.02 },
     height40: { height: 40 },
     success: { backgroundColor: colors.greeSuccess },
     error: { backgroundColor: colors.redError },
     opacityOn: { opacity: 1 },
     opacityOff: { opacity: 0 },
     buttonImagen: { padding: 12, },
-    headerTitle: { textAlign: 'center', color: 'white', textTransform: 'uppercase', fontFamily: 'Nunito-BlackItalic' },
+    headerTitle: {
+        textAlign: 'center',
+        color: 'white',
+        textTransform: 'uppercase',
+        fontFamily: 'Nunito-BlackItalic',
+        fontSize:window.height*0.028,
+    },
     container: {
         flex: 1,
         flexDirection: "column",
     },
     backgroundColorBlue: { backgroundColor: colors.blue },
     backgroundColorWhite: { backgroundColor: colors.white },
-    iconsHeader: { marginHorizontal: 20 },
-    width100: { width: '100%' },
+    iconsHeader: { marginHorizontal: window.height*0.03 },
+    headerBackground: { width: '100%', minHeight: window.height*0.17 },
     backgroundColorBlueLight: { backgroundColor: colors.blueLight },
-    viewContainer: { paddingTop: 70 },
+    viewContainer: { paddingTop: window.height*0.135 },
     imageBackground: {
         flex: 1,
         resizeMode: "cover",
@@ -181,19 +189,19 @@ export const styles = StyleSheet.create({
     },
     cardBookContainer: {
         backgroundColor: 'white',
-        paddingVertical: 20,
-        marginVertical: 8,
+        paddingVertical:  window.width*0.05,
+        marginVertical:  window.width*0.015,
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 1,
         shadowRadius: 20,
         elevation: 4,
         borderRadius: 5,
-        paddingHorizontal: 30,
+        paddingHorizontal: window.height*0.03,
         flexDirection: 'row',
     },
-    cardBookImagen: { flex: 1, height: 100 },
+    cardBookImagen: { flex: 1, height:  window.height*0.15 },
     cardBookView: { flex: 3, flexDirection: 'column', marginLeft: 20 },
-    textTitle: { fontSize: 20, fontFamily: 'Nunito-BlackItalic' },
+    textTitle: { fontSize: window.height*0.025, fontFamily: 'Nunito-BlackItalic' },
     searchBarView: {
         backgroundColor: 'white',
         flex: 1,

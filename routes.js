@@ -13,6 +13,7 @@ import {
 import {
     Image,
     View,
+    ImageBackground,
     TouchableOpacity,
     Text, TextInput
 } from 'react-native';
@@ -75,7 +76,7 @@ function TabLibrary() {
             headerMode="screen"
             screenOptions={{
                 headerBackground: () =>
-                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.headerBackground} resizeMode='cover' />,
                 headerTitleStyle: styles.headerTitle,
                 headerLeft: () => <Image source={require('./Assets/NavigationBar/ic_notifications.png')} style={styles.iconsHeader} />,
                 headerRight: headerRightComponent,
@@ -100,7 +101,7 @@ function TabWishlist() {
             headerMode="screen"
             screenOptions={{
                 headerBackground: () =>
-                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.headerBackground} />,
                 headerTitleStyle: styles.headerTitle
             }}
         >
@@ -118,7 +119,7 @@ function TabWishlist() {
             headerMode="screen"
             screenOptions={{
                 headerBackground: () =>
-                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.headerBackground} />,
                 headerTitleStyle: styles.headerTitle
             }}
         >
@@ -137,7 +138,7 @@ function TabRentals() {
             headerMode="screen"
             screenOptions={{
                 headerBackground: () =>
-                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.headerBackground} />,
                 headerTitleStyle: styles.headerTitle
             }}
         >
@@ -156,7 +157,7 @@ function TabSettings() {
             headerMode="screen"
             screenOptions={{
                 headerBackground: () =>
-                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                    <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.headerBackground} />,
                 headerTitleStyle: styles.headerTitle
             }}
         >
@@ -252,7 +253,7 @@ function StackNavigator() {
             initialRouteName={"Login"}
             headerMode="screen"
             screenOptions={{
-                headerBackground: () => <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.width100} />,
+                headerBackground: () => <Image source={require('./Assets/General/bc_nav_bar.png')} style={styles.headerBackground} />,
                 headerTintColor:colors.white ,
                 headerTitleAlign:'center',
                 headerTitleStyle: styles.headerTitle
