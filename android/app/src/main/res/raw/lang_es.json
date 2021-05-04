@@ -27,7 +27,7 @@
   "alert": {
     "welcome": "Bienvenido",
     "errorGetData":"Error al obtener datos del servidor",
-    "books":"Libreria cargada"
+    "books":"Librerya cargada"
   },
   "titleTab": {
     "library": "LIBRERIA",

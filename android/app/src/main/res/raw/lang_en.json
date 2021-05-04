@@ -1,0 +1,44 @@
+{
+   "placeholder": {
+    "name": "Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "age":"Age",
+    "search":"Search...",
+    "suggestion": "Suggestion for you"
+  },
+  "errorInput":{
+    "invalid":"Invalid %{textInput}",
+    "onlyLatters":", only use latters",
+    "onlyEmail":", valid email is example@email.com"
+  },
+  "button":{
+    "login":"LOGIN",
+    "lang":"English",
+    "rent": "RENT",
+    "addWish":"ADD TO WISHLIST",
+    "logout":"LOGOUT",
+    "close": "CLOSE"
+  },
+  "login":{
+    "term":"Accept terms and conditions"
+  },
+  "alert":{
+    "welcome":"Welcome",
+    "errorGetData":"Error getting data the server",
+    "books":"library charged"
+  },
+  "titleTab":{
+    "library":"LIBRARY",
+    "wishlist":"WISHLIST",
+    "addNew":"ADD NEW",
+    "rentals":"RENTALS",
+    "settings":"SETTINGS",
+    "bookDetail":"BOOK DETAIL"
+  },
+  "dialog":{
+    "errorConnectTo":"Error connect to  %{address}.",
+    "changeAddress":"Please change the server´s  address, currently is:"
+  }
+
+}
