@@ -85,7 +85,7 @@ function Library() {
         return (
             <TouchableNativeFeedback onPress={() => handleOpenBookDetail(item)}>
                 <View style={styles.cardBookContainer}>
-                    <Image source={item.image_url ? { uri: item.image_url,method:'GET'} : require('../Assets/General/img_book_placeholder.png')} style={styles.cardBookImagen} resizeMode='contain' />
+                    <Image source={item.image_url ? { uri: item.image_url} : require('../Assets/General/img_book_placeholder.png')} style={styles.cardBookImagen} resizeMode='contain' />
                     <View style={styles.cardBookView}>
                         <Text style={styles.textTitle} >{item.title}</Text>
                         <Text style={styles.customFont}>{item.author}</Text>
