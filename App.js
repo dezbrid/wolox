@@ -44,4 +44,6 @@ function App() {
 
 
 export default App;
-//prueba
+/**Learn more
+Daniel Enrique Ordoñez Arce
+daniel.ordonez@wolox.co */
